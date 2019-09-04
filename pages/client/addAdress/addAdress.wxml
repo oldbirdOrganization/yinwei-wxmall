@@ -1,0 +1,66 @@
+<view class="container">
+  <view class="slipt"></view>
+  <view class="list">
+    <view class="item">
+      <view class="item-top">
+        <view class="item-name">地址1</view>
+        <view class="set-defualt" bindtap="changeDefault">
+          <image class="edit-icon" src="../../../static/images/icon/edit.png" />
+          <view class="edit-txt" wx:if="{{isDefault}}">默认地址</view>
+          <view class="edit-txt" wx:else>设为默认地址</view>
+        </view>
+      </view>
+      <view class="slip">
+        <view class="label">联系人</view>
+        <view class="dd">
+          <input class="input" value="{{contactName}}" placeholder="姓名" data-d="contactName" bindinput="inputItem" />
+        </view>
+      </view>
+      <view class="slip">
+        <view class="label">性别</view>
+        <view class="dd radio-dd">
+          <view class="radio-item" data-d="1" bindtap="changeSex">
+            <view class="radio {{sex === 1 ? 'active' : ''}}"></view>
+            <view class="radio-txt">男士</view>
+          </view>
+          <view class="radio-item" data-d="2" bindtap="changeSex">
+            <view class="radio {{sex === 2 ? 'active' : ''}}"></view>
+            <view class="radio-txt">女士</view>
+          </view>
+        </view>
+      </view>
+      <view class="slip">
+        <view class="label">联系电话</view>
+        <view class="dd dd-contact">
+          <input class="input" type="number" value="{{contactMobile}}" data-d="contactMobile" bindinput="inputItem" placeholder="手机号码" />
+          <!-- <view class="contact" bindtap="addContact">+ 通讯录</view> -->
+        </view>
+      </view>
+      <view class="slip">
+        <view class="label">地址</view>
+        <view class="dd">
+          <input class="input" value="{{address}}" data-d="address" bindinput="inputItem" placeholder="地址" />
+        </view>
+      </view>
+      <view class="tags">
+        <view class="tags-label">标签</view>
+        <view class="tags-dd">
+          <view class="tag {{addressIndex === 1?'active' : ''}}" data-d="1" bindtap="changeAddressIndex">
+            家
+          </view>
+          <view class="tag {{addressIndex === 2?'active' : ''}}" data-d="2" bindtap="changeAddressIndex">
+            公司
+          </view>
+          <view class="tag {{addressIndex === 3?'active' : ''}}" data-d="3" bindtap="changeAddressIndex">
+            学校
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view></view>
+  <view class="btns">
+    <button class="btn-gray btn" bindtap="saveAddress">保存使用</button>
+    <button class="btn-pry btn" bindtap="removeAddress" wx:if="{{id || id === 0}}">删除</button>
+  </view>
+</view>

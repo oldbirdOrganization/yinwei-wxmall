@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="top">
+    <view class="top-item {{item.id === activeId ? 'active' : ''}}" wx:for="{{topList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="changeType">
+      {{item.name}}
+    </view>
+  </view>
+  <view class="list">
+    <view class="item" wx:for="{{list}}" wx:key="{{item.id}}">
+      <view class="item-left">
+        <view class="icon {{item.active ? 'active' : ''}}"></view>
+        <view class="name">{{item.name}}</view>
+        <view class="desc">{{item.desc}}</view>
+      </view>
+      <view class="item-right">{{item.price}}元/{{item.unit}}</view>
+    </view>
+  </view>
+</view>

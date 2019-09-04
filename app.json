@@ -1,42 +1,76 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/priceServer/priceServer",
+    "pages/my/my",
+    "pages/order/order",
+    "pages/orderDetail/orderDetail",
+    "pages/postComment/postComment",
+    "pages/goods/goods",
+
     "pages/catalog/catalog",
     "pages/newGoods/newGoods",
     "pages/hotGoods/hotGoods",
-    "pages/ucenter/address/address",
-    "pages/ucenter/addressAdd/addressAdd",
     "pages/ucenter/footprint/footprint",
     "pages/ucenter/order/order",
     "pages/ucenter/orderDetail/orderDetail",
     "pages/ucenter/feedback/feedback",
-    "pages/ucenter/coupon/coupon",
     "pages/ucenter/collect/collect",
     "pages/auth/login/login",
     "pages/auth/register/register",
     "pages/auth/reset/reset",
     "pages/pay/pay",
     "pages/payResult/payResult",
-    "pages/ucenter/index/index",
     "pages/topic/topic",
     "pages/comment/comment",
-    "pages/commentPost/commentPost",
     "pages/topicComment/topicComment",
     "pages/brand/brand",
     "pages/brandDetail/brandDetail",
     "pages/search/search",
-    "pages/category/category",
     "pages/cart/cart",
     "pages/shopping/checkout/checkout",
-    "pages/shopping/address/address",
-    "pages/shopping/addressAdd/addressAdd",
-    "pages/goods/goods",
     "pages/topicDetail/topicDetail",
     "pages/auth/mobile/mobile",
     "pages/shopping/selCoupon/selCoupon",
     "pages/ucenter/help/help",
     "pages/ucenter/helpInfo/helpInfo",
-    "pages/auth/btnAuth/btnAuth"
+    "pages/auth/btnAuth/btnAuth",
+    "pages/logs/logs"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/home",
+      "pages": [
+        "category/category",
+        "bespokeReform/bespokeReform",
+        "bespokeDesgin/bespokeDesgin",
+        "bespokeCustom/bespokeCustom",
+        "bespokeAir/bespokeAir",
+        "bespokeFurniture/bespokeFurniture",
+        "bespokeInspect/bespokeInspect",
+        "reportFix/reportFix",
+        "bespokeResult/bespokeResult",
+        "case/case"
+      ]
+    },
+    {
+      "root": "pages/partner",
+      "pages": ["xutong/xutong", "chelishi/chelishi", "nuantong/nuantong"]
+    },
+    {
+      "root": "pages/client",
+      "pages": [
+        "coupon/coupon",
+        "myCoupon/myCoupon",
+        "exchange/exchange",
+        "message/message",
+        "pointDesc/pointDesc",
+        "set/set",
+        "address/address",
+        "addAdress/addAdress",
+        "info/info"
+      ]
+    }
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -48,31 +82,31 @@
   "tabBar": {
     "backgroundColor": "#fafafa",
     "borderStyle": "white",
-    "selectedColor": "#b4282d",
+    "selectedColor": "#c19b85",
     "color": "#666",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "static/images/ic_menu_choice_nor.png",
-        "selectedIconPath": "static/images/ic_menu_choice_pressed.png",
+        "iconPath": "static/images/index-icon1.png",
+        "selectedIconPath": "static/images/index-icon1-a.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/ucenter/index/index",
-        "iconPath": "static/images/ic_menu_me_nor.png",
-        "selectedIconPath": "static/images/ic_menu_me_pressed.png",
+        "pagePath": "pages/my/my",
+        "iconPath": "static/images/index-icon2.png",
+        "selectedIconPath": "static/images/index-icon2-a.png",
         "text": "个人中心"
       },
       {
-        "pagePath": "pages/ucenter/index/index",
-        "iconPath": "static/images/ic_menu_shoping_nor.png",
-        "selectedIconPath": "static/images/ic_menu_shoping_pressed.png",
+        "pagePath": "pages/priceServer/priceServer",
+        "iconPath": "static/images/index-icon3.png",
+        "selectedIconPath": "static/images/index-icon3-a.png",
         "text": "服务报价"
       },
       {
-        "pagePath": "pages/ucenter/index/index",
-        "iconPath": "static/images/ic_menu_sort_nor.png",
-        "selectedIconPath": "static/images/detail_kefu.png",
+        "pagePath": "pages/priceServer/priceServer",
+        "iconPath": "static/images/index-icon4.png",
+        "selectedIconPath": "static/images/index-icon4-a.png",
         "text": "客服"
       }
     ]

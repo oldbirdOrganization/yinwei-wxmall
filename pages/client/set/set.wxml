@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="slipt"></view>
+  <view class="list">
+    <view class="item" data-url="/pages/client/info/info" bindtap="goPage">
+      <view class="name">个人信息完善</view>
+      <image class="icon" src="../../../static/images/icon/arrow.png" />
+    </view>
+    <view class="item" data-url="/pages/auth/mobile/mobile" bindtap="goPage">
+      <view class="name">绑定手机号码</view>
+    </view>
+    <view class="item" data-url="/pages/client/address/address" bindtap="goPage">
+      <view class="name">地址管理</view>
+    </view>
+    <view class="item" data-url="/pages/ucenter/feedback/feedback" bindtap="goPage">
+      <view class="name">意见反馈</view>
+    </view>
+    <view class="item">
+      <view class="name">关于我们</view>
+    </view>
+  </view>
+</view>

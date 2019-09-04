@@ -1,0 +1,13 @@
+<scroll-view class="container" scroll-y="{{true}}">
+  <image src="{{image_url}}" class="bg-img"></image>
+  <view class="form">
+    <service-type bindget="setItemValue"></service-type>
+    <service-space bindget="setItemValue"></service-space>
+    <service-acreage bindget="setItemValue"></service-acreage>
+    <contact-name bindget="setItemValue"></contact-name>
+    <contact-mobile bindget="setItemValue"></contact-mobile>
+    <form-region bindget="setItemValue"></form-region>
+    <detail-address bindget="setItemValue"></detail-address>
+  </view>
+  <bespoke-btn bindtap="submitOrder" submiting="{{submiting}}"></bespoke-btn>
+</scroll-view>

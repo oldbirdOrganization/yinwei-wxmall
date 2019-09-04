@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "家具保养维修",
+  "usingComponents": {
+    "service-type": "../../../component/service-type/service-type",
+    "service-time": "../../../component/service-time/service-time",
+    "detail-address": "../../../component/detail-address/detail-address",
+    "contact-name": "../../../component/contact-name/contact-name",
+    "contact-mobile": "../../../component/contact-mobile/contact-mobile",
+    "form-region": "../../../component/form-region/form-region",
+    "bespoke-btn": "../../../component/bespoke-btn/bespoke-btn"
+  }
+}

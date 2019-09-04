@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="info">
+    <view class="base">
+      <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+      <view class="avatar" wx:else></view>
+      <view class="name-wrap">
+        <view class="name" wx:if="{{userInfo && userInfo.avatarUrl}}">{{ userInfo.nickName }}</view>
+        <view class="name" wx:else>游客</view>
+        <view class="name-bt">
+          <view class="mark" wx:if="{{level}}">{{level}}</view>
+          <view class="process">
+            <view class="bar"></view>
+            <view class="bar-txt">100/500</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="oth">
+      <view class="oth-txt">当前积分：50</view>
+      <image class="set" src="../../static/images/icon/set.png" data-url="/pages/client/set/set" bindtap="goPage" />
+    </view>
+  </view>
+  <view class="point">
+    <view class="card">
+      <view class="point-cir">
+        <view class="point-txt">可用积分</view>
+        <view class="point-amount">50</view>
+      </view>
+    </view>
+    <view class="card">
+      <view class="point-cir" data-url="/pages/client/pointDesc/pointDesc" bindtap="goPage">
+        <view class="point-desc">积分说明</view>
+      </view>
+    </view>
+  </view>
+  <view class="card order">
+    <view class="card-top">我的订单</view>
+    <view class="card-con">
+      <view class="order-item" data-url="/pages/order/order" bindtap="goPage">
+        <image class="order-img" src="../../static/images/order-all.png"></image>
+        <view class="order-txt">全部订单</view>
+      </view>
+      <view class="order-item" data-url="/pages/order/order?type=3" bindtap="goPage">
+        <image class="order-img" src="../../static/images/order-unpay-g.png"></image>
+        <view class="order-txt">待付款</view>
+        <!-- <view class="top-num">2</view> -->
+      </view>
+    </view>
+  </view>
+  <view class="card git">
+    <view class="card-top">积分兑好礼</view>
+    <view class="card-con">
+      <view class="git-item">
+        <image class="git-img" src="../../static/images/client/coupon100.png"></image>
+        <view class="git-txt">
+          <text class="git-amount">2000积分兑换</text>
+          <view class="git-btn">立即兑换</view>
+        </view>
+      </view>
+      <view class="git-item">
+        <image class="git-img" src="../../static/images/client/coupon50.png"></image>
+        <view class="git-txt">
+          <text class="git-amount">1000积分兑换</text>
+          <view class="git-btn">立即兑换</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button bindtap="exitLogin">退出登录</button>
+</view>

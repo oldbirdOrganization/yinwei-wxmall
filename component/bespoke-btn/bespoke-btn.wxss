@@ -1,0 +1,15 @@
+.bottom {
+  width: 100%;
+  padding-bottom: 40rpx;
+}
+.submit-btn {
+  width: 323rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  background-color: #c0987f;
+  color: #fff;
+  font-size: 32rpx;
+  letter-spacing: 10rpx;
+  border-radius: 28rpx;
+}

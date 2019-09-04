@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="list">
+    <view class="item" wx:for="{{list}}" wx:key="{{item.id}}">
+      <image src="{{image_url}}" class="item-img"></image>
+      <view class="item-name">免费空调清洗</view>
+      <view class="item-price">10000积分</view>
+    </view>
+  </view>
+</view>

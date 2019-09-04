@@ -1,0 +1,47 @@
+<scroll-view class="container" scroll-y="{{true}}">
+  <image src="{{image_url}}" class="bg-img"></image>
+  <view class="form">
+    <view class="form-item">
+      <view class="form-label">选择服务</view>
+      <view class="select">
+        <view class="form-input" bindtap="troggleList">
+          <view class="form-input-txt">{{serviceIdea || "点击选择服务"}}</view>
+          <image class="arrow-icon" src="../../../static/images/icon/arrow.png" />
+        </view>
+        <view class="select-list" wx:if="{{showIdeaList}}">
+          <view class="select-item" wx:for="{{ideaList}}" wx:key="{{item.key}}" data-d="{{item}}" bindtap="selectIdea">
+            <view class="select-icon {{item === serviceIdea || (!serviceIdea && index === 0) ? 'active' : ''}}"></view>
+            <view class="select-item-txt">{{item}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <service-time bindget="setItemValue"></service-time>
+    <view class="form-item">
+      <view class="form-label">品牌型号</view>
+      <view class="form-input">
+        <input class="form-input-txt" value="{{serviceAirConditionerModel}}" data-d="serviceAirConditionerModel" bindinput="inputVlaue" placeholder="请输入品牌型号" />
+        <view class="form-unit"></view>
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-label">类型</view>
+      <view class="form-input">
+        <input class="form-input-txt" value="{{serviceAirConditionerType}}" data-d="serviceAirConditionerType" bindinput="inputVlaue" placeholder="请输入类型" />
+        <view class="form-unit"></view>
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="form-label">情况说明</view>
+      <view class="form-input">
+        <input class="form-input-txt" value="{{problemDescription}}" data-d="problemDescription" bindinput="inputVlaue" placeholder="备注" />
+        <view class="form-unit"></view>
+      </view>
+    </view>
+    <contact-name bindget="setItemValue"></contact-name>
+    <contact-mobile bindget="setItemValue"></contact-mobile>
+    <form-region bindget="setItemValue"></form-region>
+    <detail-address bindget="setItemValue"></detail-address>
+  </view>
+  <bespoke-btn bindtap="submitOrder" submiting="{{submiting}}"></bespoke-btn>
+</scroll-view>

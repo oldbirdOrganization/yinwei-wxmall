@@ -1,24 +1,20 @@
-<view class="userinfo">
-  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-</view>
-
-<view class="separate"></view>
-
 <view>
-  <view>
-    <view class="login-title">关联手机号</view>
-    <form bindsubmit="bindLoginMobilecode">
-      <form bindsubmit="bindGetPassCode">
-        <view class="login">
-          <view class="first-line"><input type="digit" name="mobile" bindinput="bindInputMobile" placeholder="输入手机号" value="{{mobile}}" auto-focus/></view>
-          <view class="second-line">
-            <input type="digit" name="code" placeholder="四位验证码"/>
-            <button bindtap="countDownPassCode" disabled="{{disableGetMobileCode}}">{{getCodeButtonText}}</button>
-          </view>
+  <form bindsubmit="bindLoginMobilecode" class="form">
+    <form bindsubmit="bindGetPassCode">
+      <view class="login">
+        <view class="first-line item">
+          <input type="digit" class="input" name="mobile " bindinput="bindInputMobile" placeholder="手机号码" value="{{mobile}}" auto-focus />
         </view>
-      </form>
-      <view class="third-line"><button formType="submit" disabled="{{disableSubmitMobileCode}}">提交</button></view>
+        <view class="second-line item">
+          <input type="digit" class="input code-input" name="code" placeholder="请输入验证码" />
+          <button class="code-btn" bindtap="countDownPassCode" disabled="{{disableGetMobileCode}}">
+            {{getCodeButtonText}}
+          </button>
+        </view>
+      </view>
     </form>
-  </view>
+    <button formType="submit" class="third-line item" disabled="{{disableSubmitMobileCode}}">
+      绑定
+    </button>
+  </form>
 </view>

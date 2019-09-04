@@ -1,0 +1,15 @@
+<view class="form-item">
+  <view class="form-label">房屋类型</view>
+  <view class="select">
+    <view class="form-input" bindtap="troggleTypeList">
+      <view class="form-input-txt">{{serviceType || "点击选择类型"}}</view>
+      <image class="arrow-icon" src="../../static/images/icon/arrow.png" />
+    </view>
+    <view class="select-list" wx:if="{{showTypeList}}">
+      <view class="select-item" wx:for="{{typeList}}" wx:key="{{item.key}}" data-d="{{item}}" bindtap="selectType">
+        <view class="select-icon {{item === serviceType || (!serviceType && index === 0) ? 'active' : ''}}"></view>
+        <view class="select-item-txt">{{item}}</view>
+      </view>
+    </view>
+  </view>
+</view>

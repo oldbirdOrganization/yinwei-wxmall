@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的红包",
+  "usingComponents": {
+    "coupon-item": "../../../component/coupon-item/coupon-item",
+    "coupon-empty": "../../../component/coupon-empty/coupon-empty"
+  }
+}

@@ -1,0 +1,35 @@
+page,
+.container{
+	background-color: #fff;
+}
+.slipt{
+	height: 12rpx;
+	background-color: #d8d8d8;
+}
+.list{
+	padding: 24rpx 36rpx;
+}
+.item{
+	height: 96rpx;
+	padding-left: 24rpx;
+	padding-right: 4rpx;
+	border-bottom: 1rpx solid #dcdcdc;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.name{	
+	display: flex;
+}
+.icon{
+	width: 12rpx;
+	height: 26rpx;
+}
+.txt{
+	font-size: 26rpx;
+}
+.item-icon{
+	width: 50rpx;
+	height: 50rpx;
+	margin-right: 22rpx;
+}

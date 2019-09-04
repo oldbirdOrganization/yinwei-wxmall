@@ -1,0 +1,21 @@
+.require-item{
+	padding: 6rpx 24rpx 8rpx;
+	border: 1rpx solid #a5a5a5;
+	border-radius: 24rpx;
+	margin-right: 10rpx;
+  position: relative;
+  display: inline-block;
+}
+.require-txt{
+	font-size: 18rpx;
+	color: #8b8b8b;
+}
+.require-btn{
+	position: absolute;
+	right: -10rpx;
+	top: -20rpx;
+}
+.require-icon{
+	width: 20rpx;
+	height: 20rpx;
+}

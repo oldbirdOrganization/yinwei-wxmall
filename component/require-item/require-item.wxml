@@ -1,0 +1,6 @@
+<view class="require-item">
+  <view class="require-txt">{{requireTxt}}</view>
+  <view class="require-btn" catchtap="close">
+    <image src="../../static/images/icon/close.png" class="require-icon"></image>
+  </view>
+</view>

@@ -1,0 +1,68 @@
+page,
+.container {
+  background-color: #fff;
+}
+.container{
+	padding: 0rpx 36rpx;
+}
+.item{
+	border-bottom: 1rpx solid #d2d2d2;
+	height: 112rpx;
+	display: flex;
+	align-items: center;
+	padding-left: 16rpx;
+}
+.label{
+	width: 188rpx;
+	padding-right: 20rpx;
+	font-size: 26rpx;
+}
+.marks{
+	flex: 1;
+	display: flex;
+}
+.mark{
+	width: 32rpx;
+	height: 30rpx;
+	margin-right: 20rpx;
+}
+.tags{
+	padding: 44rpx 58rpx 26rpx;
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: 1rpx solid #d2d2d2;
+}
+.tag{
+	margin-bottom: 20rpx;
+	margin-right: 36rpx;
+	padding: 6rpx 32rpx 8rpx;
+	font-size: 26rpx;
+	border: 1rpx solid #b3b3b3;
+	color: #b3b3b3;
+	border-radius: 20rpx;
+}
+.tag.active{
+	border-color: #c19b81;
+	color: #c19b81;
+}
+.other{
+
+}
+.input{
+	padding: 26rpx 40rpx;
+	line-height: 40rpx;
+	font-size: 26rpx;
+}
+.btn{
+	width: 323rpx;
+	height: 66rpx;
+	font-size: 32rpx;
+	color: #fff;
+	letter-spacing: 10rpx;
+	border-radius: 30rpx;
+	background-color: #c0987f;
+	line-height: 66rpx;
+	position: absolute;
+	left: 220rpx;
+	bottom: 88rpx;
+}

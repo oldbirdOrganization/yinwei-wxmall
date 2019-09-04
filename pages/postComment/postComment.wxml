@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="item">
+    <view class="label">质量评价</view>
+    <view class="marks">
+      <image wx:for="{{qList}}" wx:key="{{index}}" data-i="{{index}}" data-list="qList" bindtap="itemTap" src="{{item ? '../../static/images/icon/star-solid.png' : '../../static/images/icon/star-empty.png'}}" class="mark" />
+    </view>
+  </view>
+  <view class="item">
+    <view class="label">服务评价</view>
+    <view class="marks">
+      <image wx:for="{{sList}}" wx:key="{{index}}" data-i="{{index}}" data-list="sList" bindtap="itemTap" src="{{item ? '../../static/images/icon/star-solid.png' : '../../static/images/icon/star-empty.png'}}" class="mark" />
+    </view>
+  </view>
+  <!-- <view class="tags">
+    <view class="tag">质量好</view>
+    <view class="tag">质量好</view>
+    <view class="tag">质量好</view>
+    <view class="tag">质量好</view>
+    <view class="tag">质量好</view>
+  </view> -->
+  <view class="other">
+    <textarea class="input" type="area" placeholder="其他意见和建议" bindinput="inputContent"></textarea>
+  </view>
+  <button class="btn" bindtap="postComment">发布</button>
+</view>

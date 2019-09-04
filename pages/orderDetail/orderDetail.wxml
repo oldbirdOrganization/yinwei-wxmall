@@ -1,0 +1,75 @@
+<view class="container">
+  <view class="top">
+    <view class="status">{{info.orderTypeTxt}}</view>
+    <view class="top-txt">订单编号：{{orderNo}}</view>
+    <view class="top-txt">下单时间：{{info.orderTime}}</view>
+  </view>
+  <view class="item">
+    <view class="label">联系人： {{info.contactName}}</view>
+    <view class="dd">{{info.contactMobile}}</view>
+  </view>
+  <view class="item">
+    <view class="label">服务地址：</view>
+    <view class="dd">{{info.address}}</view>
+  </view>
+  <view class="item">
+    <view class="label">服务时间：</view>
+    <view class="dd">{{info.serviceTime}}</view>
+  </view>
+  <!-- <view class="item person">
+    <view class="person-left">
+      <view class="name">
+        <view class="person-name">{{info.outerMerchantName}}：</view>
+        <view class="stars">
+          <image class="star" src="../../static/images/icon/star-y.png" />
+        </view>
+      </view>
+      <view class="person-phone">{{info.}}</view>
+    </view>
+    <view class="person-btn" bindtap="makeCall">联系师傅</view>
+  </view> -->
+  <view class="require">
+    <view class="label">维修需求：</view>
+    <view class="require-desc">
+      <require-item requireTxt="{{item}}" wx:for="{{info.requireList}}" wx:key="{{index}}"></require-item>
+    </view>
+  </view>
+  <view class="item">
+    <view class="label">维修拍照：</view>
+    <view class="dd">
+      <image class="fix-image" src="{{info.url}}" />
+    </view>
+  </view>
+  <view class="desc">
+    <view class="desc-title">问题描述：</view>
+    <view class="desc-dd">{{info.problemDescription}}</view>
+  </view>
+  <view class="tag">维修清单收费项</view>
+  <view class="slip">
+    <view class="fee-name">改造费用</view>
+    <view class="price">￥0</view>
+  </view>
+  <view class="tag">维修清单免费项</view>
+  <view class="slip">
+    <view class="fee-name">优惠券</view>
+    <view class="coupon">
+      <text class="coupon-amount">2张</text>
+      <image class="arrow-icon" src="../../static/images/icon/arrow.png" />
+    </view>
+  </view>
+  <view class="slip">
+    <view class="fee-name">改造费用</view>
+    <view class="price">￥0</view>
+  </view>
+  <view class="slip last-slip">
+    <view class="fee-name">改造费用</view>
+    <view class="price">￥0</view>
+  </view>
+  <view class="bottom">
+    <view class="total">
+      合计:
+      <text class="price">￥{{info.orderPrice}}</text>
+    </view>
+    <view class="btn" bindtap="pay">立即支付</view>
+  </view>
+</view>

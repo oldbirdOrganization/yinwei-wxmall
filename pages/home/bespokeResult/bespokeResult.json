@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "预约结果",
+  "usingComponents": {
+    "floor-goods": "../../component/floor-goods/floor-goods"
+  }
+}

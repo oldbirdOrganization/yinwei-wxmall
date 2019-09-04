@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "车丽饰",
+  "navigationBarBackgroundColor": "#c0987f",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "contact-name": "../../../component/contact-name/contact-name",
+    "contact-mobile": "../../../component/contact-mobile/contact-mobile"
+  }
+}

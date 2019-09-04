@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="form">
+    <contact-name bindget="setItemValue"></contact-name>
+    <view class="item">
+      <view class="label">服务地址</view>
+      <view class="input">
+        <input class="input-txt" value="{{address}}" bindinput="inputAddress" placeholder="请选择服务地址" />
+        <view class="unit"></view>
+      </view>
+    </view>
+    <service-time bindget="setItemValue"></service-time>
+    <view class="item">
+      <view class="label">维修需求</view>
+      <view class="input" bindtap="showModal">
+        <require-item wx:for="{{requires}}" wx:if="{{requires.length}}" wx:key="{{item.key}}" data-index="{{index}}" requireTxt="{{item}}" bindclose="cancelRequire"></require-item>
+        <view class="input-txt" wx:if="{{!requires.length}}">请选择维修需求</view>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">问题描述</view>
+      <view class="input">
+        <input class="input-txt" value="{{problemDescription}}" bindinput="inputDescription" placeholder="请描述报修问题详情" />
+        <view class="unit"></view>
+      </view>
+    </view>
+    <view class="pics">
+      <view class="pic-item" wx:for="{{imgs}}" wx:key="{{item.key}}">
+        <block wx:if="{{item.src}}">
+          <image src="{{item.src}}" class="pic " />
+          <image src="../../../static/images/icon/close.png" class="close-icon" data-index="{{index}}" bindtap="removeCamera" />
+        </block>
+        <block wx:if="{{item.isCamera}}">
+          <image src="../../../static/images/icon/camera.png" class="camera " bindtap="selectCamera" />
+          <view class="camera-txt">添加照片</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="btm">
+    <button bindtap="submitOrder" class="submit-btn">立即报修</button>
+  </view>
+</view>
+<modal show="{{showModal}}" height='60%'>
+  <view class='modal-con'>
+    <view class="modal-item {{item.active ? 'active' : ''}}" bindtap="tapRequire" data-index="{{index}}" wx:for="{{requirePool}}" wx:key="{{item.key}}">
+      {{item.txt}}
+    </view>
+    <view class="modal-btns">
+      <button class="modal-btn" bindtap="closeModal">取消</button>
+      <button class="modal-btn" bindtap="selectRequire">确定</button>
+    </view>
+  </view>
+</modal>

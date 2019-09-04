@@ -1,0 +1,32 @@
+@import "../../../static/wxss/form.wxss";
+page {
+  height: 100%;
+  overflow: hidden;
+}
+.container {
+  height: 100%;
+  background-color: #fff;
+}
+.bg-img {
+  width: 100%;
+  height: 302rpx;
+}
+.form {
+  padding: 42rpx 50rpx 54rpx;
+  font-size: 26rpx;
+}
+
+.modal-input {
+  height: 64rpx;
+  padding: 0rpx 46rpx;
+  line-height: 64rpx;
+  border-radius: 38rpx;
+  font-size: 24rpx;
+  border: 1rpx solid #c0987f;
+  color: #c0987f;
+  margin-bottom: 20rpx;
+}
+.modal-btns {
+  padding-top: 20rpx;
+  display: flex;
+}

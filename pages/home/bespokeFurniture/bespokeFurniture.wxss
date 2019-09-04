@@ -1,0 +1,110 @@
+@import "../../../static/wxss/form.wxss";
+page {
+  height: 100%;
+  overflow: hidden;
+}
+.container {
+  height: 100%;
+  background-color: #fff;
+}
+.bg-img {
+  width: 100%;
+  height: 302rpx;
+}
+.form {
+  padding: 42rpx 50rpx 54rpx;
+  font-size: 26rpx;
+}
+.problem-item {
+  border-bottom: 2rpx solid #d8d8d8;
+  padding: 30rpx 0rpx;
+}
+.problem-des {
+  margin-bottom: 20rpx;
+  display: flex;
+  border-radius: 32rpx;
+  background-color: #f0f0f0;
+  height: 70rpx;
+  align-items: center;
+}
+.problem-label {
+  width: 204rpx;
+  padding-left: 40rpx;
+  padding-right: 20rpx;
+  font-size: 26rpx;
+}
+.problem-input {
+  font-size: 26rpx;
+  color: #dddddd;
+}
+.problem-imgs {
+  border-radius: 32rpx;
+  background-color: #f0f0f0;
+  padding: 46rpx 64rpx 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.img-item,
+.pic {
+  width: 110rpx;
+  height: 110rpx;
+}
+.pic-empty {
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 14rpx;
+  border: 1rpx dashed #d1d1d1;
+  position: relative;
+  margin-top: 10rpx;
+}
+.pic-empty .ver-line {
+  background-color: #ddd;
+  width: 2rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 44rpx;
+}
+.pic-empty .con-line {
+  background-color: #ddd;
+  height: 2rpx;
+  width: 30rpx;
+  position: absolute;
+  top: 44rpx;
+  left: 30rpx;
+}
+.img-item {
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.camera-item {
+  background-color: #d8d8d8;
+}
+.camera {
+  width: 100rpx;
+  height: 80rpx;
+  margin-left: 8rpx;
+  vertical-align: top;
+}
+.camera-txt {
+  font-size: 13rpx;
+  text-align: center;
+  position: relative;
+  top: -6rpx;
+}
+.camera-txt::before {
+  content: "最多6张";
+  font-size: 10rpx;
+  position: absolute;
+  top: 16rpx;
+  left: 40rpx;
+}
+.close-icon {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}

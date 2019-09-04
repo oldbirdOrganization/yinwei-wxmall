@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "专业验房预约",
+  "usingComponents": {
+    "service-house": "../../../component/service-house/service-house",
+    "service-time": "../../../component/service-time/service-time",
+    "service-type": "../../../component/service-type/service-type",
+    "contact-name": "../../../component/contact-name/contact-name",
+    "contact-mobile": "../../../component/contact-mobile/contact-mobile",
+    "form-region": "../../../component/form-region/form-region",
+    "service-acreage": "../../../component/service-acreage/service-acreage",
+    "detail-address": "../../../component/detail-address/detail-address",
+    "bespoke-btn": "../../../component/bespoke-btn/bespoke-btn"
+  }
+}

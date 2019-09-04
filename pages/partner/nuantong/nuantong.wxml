@@ -1,0 +1,90 @@
+<view class="container">
+  <image src="{{imgPath}}" class="bg-img"></image>
+  <view class="form">
+    <view class="item">
+      <view class="label">选择品牌</view>
+      <view class="">
+        <view class="input" bindtap="troggleList">
+          <view class="input-txt">{{outerServiceBrand || "点击选择品牌"}}</view>
+          <image class="icon" src="../../../static/images/icon/arrow.png" />
+        </view>
+        <view class="select-list" wx:if="{{showBrandList}}">
+          <view class="select-item" wx:for="{{brandList}}" wx:key="{{item.key}}" data-d="{{item}}" data-i="{{index}}" bindtap="selectBrand">
+            <view class="select-icon {{item === outerServiceBrand || (!outerServiceBrand && index === 0) ? 'active' : ''}}"></view>
+            <view class="select-item-txt">{{item}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="item item-select">
+      <view class="select">
+        <view class="label">选择套餐</view>
+        <view class="input" bindtap="trogglePackage">
+          <view class="input-txt">{{outerServiceCombo || "点击选择套餐"}}</view>
+          <image class="icon" src="../../../static/images/icon/arrow.png" />
+        </view>
+      </view>
+      <view class="select-list-one" wx:if="{{brandType === 1 && showPackage}}">
+        <view class="select-item-one" wx:for="{{package1}}" wx:key="{{index}}" data-i="{{index}}" data-l="package1" bindtap="tapPackage">
+          <view class="select-item-top">
+            <view class="select-icon {{item.active ? 'active' : ''}}"></view>
+            <view class="select-item-name">{{item.name}}</view>
+          </view>
+          <view class="select-con">
+            <view class="select-con-item" wx:for="{{item.subs}}" wx:for-item="cell" wx:key="{{index}}">
+              {{cell}}
+            </view>
+          </view>
+          <image src="{{item.src}}" class="select-img" />
+          <view class="select-desc">
+            <view class="select-desc-item" wx:for="{{item.desc}}" wx:for-item="cell" wx:key="{{index}}">
+              {{cell}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="select-list-two" wx:if="{{brandType === 2 && showPackage}}">
+        <view class="select-item-two" wx:for="{{package2}}" wx:key="{{index}}" data-i="{{index}}" data-l="package1" bindtap="tapPackage">
+          <image src="{{item.src}}" class="package-img" />
+          <view class="select-item-top">
+            <view class="select-icon {{item.active ? 'active' : ''}}"></view>
+            <view class="select-item-name">{{item.name}}</view>
+          </view>
+          <view class="select-item-type">{{item.code}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">价格</view>
+      <view class="input">
+        <view class="input-txt">9500</view>
+        <view class="unit"></view>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">联系人</view>
+      <view class="input">
+        <input class="input-txt" placeholder="请输入姓名" />
+        <view class="unit"></view>
+      </view>
+    </view>
+    <view class="item">
+      <view class="label">联系电话</view>
+      <view class="input">
+        <input class="input-txt" placeholder="请输入联系电话" type="number" />
+        <view class="unit"></view>
+      </view>
+    </view>
+    <form-region bindget="setItemValue"></form-region>
+    <detail-address bindget="setItemValue"></detail-address>
+    <view class="btn">
+      <button bindtap="submitOrder" class="submit-btn">立即下单</button>
+    </view>
+  </view>
+  <view class="detail">
+    <view class="phone">
+      <image class="phone-icon" src="../../../static/images/icon/phone.png" />
+      <view class="phone-txt">021-543153</view>
+    </view>
+  </view>
+</view>

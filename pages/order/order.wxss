@@ -1,0 +1,104 @@
+page {
+  background-color: #fff;
+}
+.top,
+.detail {
+  background-color: #fff;
+}
+.top {
+  padding: 28rpx;
+}
+.top-bar {
+  height: 48rpx;
+  background-color: #e1e1e1;
+  border-radius: 26rpx;
+}
+.top-list {
+  margin-top: 30rpx;
+  display: flex;
+}
+.top-item {
+  width: 25%;
+  height: 123rpx;
+  text-align: center;
+}
+.top-img-wrap {
+  position: relative;
+}
+.top-img {
+  width: 82rpx;
+  height: 82rpx;
+}
+.top-num {
+  position: absolute;
+  right: 34rpx;
+  top: -2rpx;
+  padding: 4rpx 8rpx 5rpx;
+  background-color: #df1d24;
+  font-size: 18rpx;
+  color: #fff;
+  border-radius: 50%;
+}
+.top-name {
+  font-size: 20rpx;
+  line-height: 40rpx;
+}
+.top-name.active {
+  color: #b88b6f;
+}
+
+.slipt {
+  height: 12rpx;
+  background-color: #d8d8d8;
+}
+.detail {
+  padding: 0rpx 36rpx;
+}
+.item {
+  display: flex;
+  border-bottom: 1rpx solid #d4d4d4;
+  align-items: center;
+  height: 118rpx;
+  padding: 0rpx 20rpx;
+}
+.label {
+  width: 188rpx;
+  padding-right: 20rpx;
+  font-size: 28rpx;
+}
+.desc {
+  font-size: 28rpx;
+  width: 420rpx;
+}
+.require {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+.require .label {
+  line-height: 40rpx;
+}
+.require .desc {
+  margin-top: 10rpx;
+}
+
+.btns {
+  text-align: right;
+  padding: 62rpx 52rpx 60rpx;
+  background-color: #fff;
+}
+.btn {
+  font-size: 26rpx;
+  border-radius: 28rpx;
+  display: inline-block;
+  background-color: #fff;
+  line-height: 54rpx;
+  letter-spacing: 6rpx;
+}
+.btn-gray {
+  border: 1rpx solid #bfbfbf;
+  margin-right: 18rpx;
+}
+.btn-pry {
+  border: 1rpx solid #da5500;
+  color: #da5500;
+}

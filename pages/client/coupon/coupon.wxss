@@ -1,0 +1,14 @@
+page {
+  background-color: #f0f0f0;
+}
+.container {
+  padding-bottom: 44rpx;
+}
+.list {
+  padding: 44rpx 44rpx 20rpx;
+}
+.my-btn {
+  font-size: 26rpx;
+  color: #c19b85;
+  text-align: center;
+}

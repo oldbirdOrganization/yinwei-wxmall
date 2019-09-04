@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "改造预约",
+  "usingComponents": {
+    "service-type": "../../../component/service-type/service-type",
+    "service-space": "../../../component/service-space/service-space",
+    "contact-name": "../../../component/contact-name/contact-name",
+    "contact-mobile": "../../../component/contact-mobile/contact-mobile",
+    "form-region": "../../../component/form-region/form-region",
+    "service-acreage": "../../../component/service-acreage/service-acreage",
+    "detail-address": "../../../component/detail-address/detail-address",
+    "bespoke-btn": "../../../component/bespoke-btn/bespoke-btn"
+  }
+}

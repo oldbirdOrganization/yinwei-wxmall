@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="top">
+    <view class="top-bar"></view>
+    <view class="top-list">
+      <view class="top-item" bindtap="changeType" data-d="{{index+1}}" wx:for="{{typeList}}" wx:key="{{item.key}}">
+        <view class="top-img-wrap">
+          <image class="top-img" src="{{item.icon}}" />
+          <view class="top-num" wx:if="{{item.remain}}">{{item.remain}}</view>
+        </view>
+        <view class="top-name {{type === index+1 ? 'active' : ''}}">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{list}}" wx:key="{{item.key}}">
+    <view class="slipt"></view>
+    <view class="detail">
+      <view class="item">
+        <view class="label">订单编号</view>
+        <view class="desc">{{item.orderNo}}</view>
+      </view>
+      <view class="item">
+        <view class="label">维修需求</view>
+        <view class="desc">
+          <require-item requireTxt="{{cell}}" wx:for="{{item.requireList}}" wx:for-item="cell" wx:key="{{index}}"></require-item>
+        </view>
+      </view>
+      <view class="item">
+        <view class="label">服务时间</view>
+        <view class="desc">{{item.serviceTime}}</view>
+      </view>
+      <view class="item">
+        <view class="label">服务地址</view>
+        <view class="desc address">{{item.address}}</view>
+      </view>
+      <view class="item">
+        <view class="label">维修报价</view>
+        <view class="desc">{{item.orderPrice}}元</view>
+      </view>
+    </view>
+    <view class="btns">
+      <!-- <button wx:if="{{type !== 4}}" class="btn-gray btn" data-d="{{index}}" bindtap="cancelOrder">
+        取消订单
+      </button> -->
+      <!-- 待指派 -->
+      <!-- <button wx:if="{{type === 1}}" class="btn-pry btn" data-d="{{index}}">催单</button> -->
+      <!-- 待确认 -->
+      <!-- <button wx:if="{{type === 2}}" class="btn-pry btn" data-d="{{index}}">确认</button> -->
+      <!-- 待指派 -->
+      <button wx:if="{{type === 3}}" open-type="getUserInfo" class="btn-pry btn" data-url="/pages/orderDetail/orderDetail?orderNo={{item.orderNo}}" bindtap="goPay">
+        立即付款
+      </button>
+      <!-- 已完成 -->
+      <button wx:if="{{type === 4}}" class="btn-pry btn" data-url="/pages/postComment/postComment?orderNo={{item.orderNo}}" bindtap="goPage">
+        服务评价
+      </button>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="top-line"></view>
+  <view class="title">会员积分使用说明</view>
+  <view class="card">
+    <view class="card-top">成为会员</view>
+    <view class="card-con card-txt">完成一笔一步e家订单（不含合作服务）即可成为会员，享受会员尊享服务。</view>
+  </view>
+  <view class="card">
+    <view class="card-top">积分获取方式</view>
+    <view class="card-con">
+      <view class="way">
+        <view class="way-left">
+          <view class="way-name">个人信息完善</view>
+          <view class="way-point">+50</view>
+        </view>
+        <view class="way-right" bindtap="goPage" data-url="/pages/client/info/info">去完善</view>
+      </view>
+      <view class="way">
+        <view class="way-left">
+          <view class="way-name">
+            消费金额10元
+            <text class="way-name-small">（仅限一步e家业务，不含合作服务）</text>
+          </view>
+          <view class="way-point">+1</view>
+        </view>
+        <view class="way-right" bindtap="goPage" data-url="/pages/index/index">去消费</view>
+      </view>
+      <view class="way">
+        <view class="way-left">
+          <view class="way-name">
+            订单五星好评
+            <text class="way-name-small">（所有订单）</text>
+          </view>
+          <view class="way-point">+5</view>
+        </view>
+        <view class="way-right" bindtap="goPage" data-url="/pages/order/order?type=4">去好评</view>
+      </view>
+      <view class="way">
+        <view class="way-left">
+          <view class="way-name">分享邀请码</view>
+          <view class="way-point">+20</view>
+        </view>
+        <button open-type="share" class="way-btn">去分享</button>
+      </view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="card-top">积分兑换说明</view>
+    <view class="card-con card-txt">
+      <view class="card-txt-item">1、兑换一步e家抵扣金：每10积分可抵扣1元</view>
+      <view class="card-txt-item">2、兑换合作服务优惠券（实时更新）</view>
+    </view>
+  </view>
+</view>

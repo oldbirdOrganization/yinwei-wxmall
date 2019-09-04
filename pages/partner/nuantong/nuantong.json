@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "空调地暖",
+  "usingComponents": {
+    "detail-address": "../../../component/detail-address/detail-address",
+    "form-region": "../../../component/form-region/form-region"
+  }
+}

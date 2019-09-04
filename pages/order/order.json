@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "require-item": "../../component/require-item/require-item"
+  }
+}

@@ -1,0 +1,20 @@
+<scroll-view class="container" scroll-y="{{true}}">
+  <image src="{{image_url}}" class="bg-img"></image>
+  <view class="form">
+    <service-house bindget="setItemValue"></service-house>
+    <service-type bindget="setItemValue"></service-type>
+    <view class="form-item">
+      <view class="form-label">交付标准</view>
+      <view class="form-input">
+        <input class="form-input-txt" value="{{serviceHouseDeliveryStandards}}" data-d="serviceHouseDeliveryStandards" bindinput="inputVlaue" placeholder="请输入交付标准" />
+        <view class="form-unit"></view>
+      </view>
+    </view>
+    <service-time bindget="setItemValue"></service-time>
+    <contact-name bindget="setItemValue"></contact-name>
+    <contact-mobile bindget="setItemValue"></contact-mobile>
+    <form-region bindget="setItemValue"></form-region>
+    <detail-address bindget="setItemValue"></detail-address>
+  </view>
+  <bespoke-btn bindtap="submitOrder" submiting="{{submiting}}"></bespoke-btn>
+</scroll-view>

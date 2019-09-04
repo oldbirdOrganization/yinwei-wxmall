@@ -74,12 +74,12 @@ Page({
   },
   selectAddress() {
     wx.navigateTo({
-      url: '/pages/shopping/address/address',
+      url: '/pages/client/address/address',
     })
   },
   addAddress() {
     wx.navigateTo({
-      url: '/pages/shopping/addressAdd/addressAdd',
+      url: '/pages/client/addressAdd/addressAdd',
     })
   },
   onReady: function () {

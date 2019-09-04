@@ -1,0 +1,89 @@
+page {
+  background-color: #f0f0f0;
+}
+.container {
+}
+.top-line {
+  height: 10rpx;
+  background-color: #d8d8d8;
+}
+.title {
+  width: 522rpx;
+  height: 62rpx;
+  margin: 58rpx auto 54rpx;
+  border: 1rpx solid #bf987f;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 62rpx;
+  font-size: 32rpx;
+  color: #bf987f;
+}
+.card {
+  margin: 0rpx 28rpx 30rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+}
+.card-top {
+  color: #bf987f;
+  height: 76rpx;
+  padding-left: 42rpx;
+  font-size: 26rpx;
+  line-height: 76rpx;
+}
+.card-con {
+  margin: 0rpx 10rpx;
+  border-top: 1rpx solid #d2d2d2;
+}
+.card-txt {
+  font-size: 24rpx;
+  padding: 10rpx 24rpx 10rpx 34rpx;
+  line-height: 40rpx;
+}
+.card-txt-item {
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.way {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1rpx solid #d2d2d2;
+  height: 86rpx;
+  align-items: center;
+}
+.way:first-child {
+  border-top: none;
+}
+.way-left {
+  padding-left: 14rpx;
+  display: flex;
+}
+.way-name {
+  font-size: 24rpx;
+  margin-right: 26rpx;
+}
+.way-name-small {
+  font-size: 18rpx;
+}
+.way-point {
+  color: #bf987f;
+  font-size: 30rpx;
+}
+.way-right {
+  margin-right: 14rpx;
+  padding: 9rpx 22rpx;
+  color: #bf987f;
+  border: 1rpx solid #bf987f;
+  border-radius: 24rpx;
+  font-size: 24rpx;
+}
+.way-btn {
+  background-color: #fff;
+  height: 50rpx;
+  margin-right: 14rpx;
+  padding: 0rpx 22rpx;
+  color: #bf987f;
+  border: 1rpx solid #bf987f;
+  border-radius: 24rpx;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}

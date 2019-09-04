@@ -1,0 +1,23 @@
+<view class='coupon-item'>
+  <view class="coupon-main">
+    <view class="coupon-left">
+      <view class="coupon-price">
+        <view class="coupon-unit">￥</view>
+        <view class="coupon-amount">{{info.type_money}}</view>
+      </view>
+      <view class="coupon-sill" wx:if="{{!info.min_amount}}">无金额门槛</view>
+      <view class="coupon-sill" wx:else>满{{info.min_amount}}元使用</view>
+    </view>
+    <view class="coupon-right">
+      <view class="coupon-desc">
+        <view class="coupon-type">现金券</view>
+        <view class="coupon-name">{{info.name}}</view>
+      </view>
+      <view class="coupon-limit">
+        <view class="coupon-time">{{info.use_start_date}}至{{info.use_end_date}}</view>
+        <view class="coupon-btn" bindtap="getCoupon">立即领取</view>
+      </view>
+    </view>
+  </view>
+  <view class="coupon-bottom">{{info.coupon_txt || ''}}</view>
+</view>

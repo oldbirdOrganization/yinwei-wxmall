@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "一键维修",
+  "navigationBarBackgroundColor": "#c0987f",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "modal": "../../../component/modal/modal",
+    "require-item": "../../../component/require-item/require-item",
+    "contact-name": "../../../component/contact-name/contact-name",
+    "service-time": "../../../component/service-time/service-time"
+  }
+}

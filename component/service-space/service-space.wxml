@@ -1,0 +1,15 @@
+<view class="form-item">
+  <view class="form-label">选择空间</view>
+  <view class="select">
+    <view class="form-input" bindtap="troggleCategoryList">
+      <view class="form-input-txt">{{serviceSpace || "点击选择空间"}}</view>
+      <image class="arrow-icon" src="../../static/images/icon/arrow.png" />
+    </view>
+    <view class="select-list" wx:if="{{showCategoryList}}">
+      <view class="select-item" wx:for="{{categoryList}}" wx:key="{{item.key}}" data-d="{{item.name}}" bindtap="selectCategory">
+        <view class="select-icon {{item.name === serviceSpace || (!serviceSpace && index === 0) ? 'active' : ''}}"></view>
+        <view class="select-item-txt">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+<scroll-view class="container" scroll-y="{{true}}">
+  <image src="{{image_url}}" class="bg-img"></image>
+  <view class="form">
+    <service-type bindget="setItemValue"></service-type>
+    <service-time bindget="setItemValue"></service-time>
+    <view class="form-item">
+      <view class="form-label">家具名称</view>
+      <view class="form-input">
+        <input class="form-input-txt" value="{{serviceFurniture}}" bindinput="inputServiceFurniture" placeholder="请输入姓名" />
+        <view class="form-unit"></view>
+      </view>
+    </view>
+    <view class="problem-item">
+      <view class="problem-des">
+        <view class="problem-label">问题描述</view>
+        <input class="problem-input" value="{{problemDescription}}" bindinput="inputDescription" placeholder="请描述保修问题详情" />
+      </view>
+      <view class="problem-imgs">
+        <view class="img-item {{item.isCamera ? 'camera-item' : ''}}" wx:for="{{imgs}}" wx:key="{{item.key}}">
+          <block wx:if="{{item.src}}">
+            <image src="{{item.src}}" class="pic " />
+            <image src="../../../static/images/icon/close.png" class="close-icon" data-index="{{index}}" bindtap="removeCamera" />
+          </block>
+          <block wx:if="{{item.isCamera}}">
+            <image src="../../../static/images/icon/camera.png" class="camera " bindtap="selectCamera" />
+            <view class="camera-txt">上传凭证</view>
+          </block>
+          <blcok wx:if="{{!item.src && index < 3 && !item.isCamera}}">
+            <view class="pic-empty">
+              <view class="ver-line"></view>
+              <view class="con-line"></view>
+            </view>
+          </blcok>
+        </view>
+      </view>
+    </view>
+    <contact-name bindget="setItemValue"></contact-name>
+    <contact-mobile bindget="setItemValue"></contact-mobile>
+    <form-region bindget="setItemValue"></form-region>
+    <detail-address bindget="setItemValue"></detail-address>
+  </view>
+  <bespoke-btn bindtap="submitOrder" submiting="{{submiting}}"></bespoke-btn>
+</scroll-view>

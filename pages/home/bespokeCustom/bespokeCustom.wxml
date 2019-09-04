@@ -1,0 +1,13 @@
+<scroll-view class="container" scroll-y="{{true}}">
+  <image src="{{image_url}}" class="bg-img" mode="aspectFit"></image>
+  <view class="form">
+    <service-house bindget="setItemValue"></service-house>
+    <detail-address bindget="setItemValue"></detail-address>
+    <service-space bindget="setItemValue"></service-space>
+    <service-idea bindget="setItemValue" list="{{ideaList}}"></service-idea>
+    <form-item labelTxt="价格" value="{{orderPrice}}"></form-item>
+    <contact-name bindget="setItemValue"></contact-name>
+    <contact-mobile bindget="setItemValue"></contact-mobile>
+  </view>
+  <bespoke-btn bindtap="submitOrder" submiting="{{submiting}}"></bespoke-btn>
+</scroll-view>

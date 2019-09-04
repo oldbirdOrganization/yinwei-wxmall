@@ -1,0 +1,17 @@
+<view class="plan-item">
+  <view class="plan-select">
+    <view class="form-label">选择方案</view>
+    <view class="form-input" bindtap="troggleTypeList">
+      <view class="form-input-txt">{{serviceIdea || "点击选择方案"}}</view>
+      <image class="arrow-icon" src="../../static/images/icon/arrow.png" />
+    </view>
+  </view>
+  <view class="plan-list" wx:if="{{showList}}">
+    <view class="plan" wx:for="{{list}}" wx:key="{{item.key}}" data-d="{{item.name}}" bindtap="selectType">
+      <image src="{{item.src}}" class="plan-img" />
+      <view class="plan-btn {{item.name === serviceIdea || (!serviceIdea && index === 0) ? 'active' : ''}}">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+</view>

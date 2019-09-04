@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="list" wx:if="{{list.length}}">
+    <coupon-item info="{{item}}" wx:for="{{list}}" wx:key="{{item.id}}"></coupon-item>
+  </view>
+  <coupon-empty wx:else emptyTxt="暂无优惠券"></coupon-empty>
+  <button class="my-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+    我的红包
+  </button>
+</view>

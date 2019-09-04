@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "定制化加配预约",
+  "usingComponents": {
+    "service-house": "../../../component/service-house/service-house",
+    "detail-address": "../../../component/detail-address/detail-address",
+    "service-space": "../../../component/service-space/service-space",
+    "service-idea": "../../../component/service-idea/service-idea",
+    "contact-name": "../../../component/contact-name/contact-name",
+    "contact-mobile": "../../../component/contact-mobile/contact-mobile",
+    "form-item": "../../../component/form-item/form-item",
+    "bespoke-btn": "../../../component/bespoke-btn/bespoke-btn"
+  }
+}

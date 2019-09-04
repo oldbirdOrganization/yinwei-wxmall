@@ -1,0 +1,7 @@
+<view class="form-item">
+  <view class="form-label">小区名称</view>
+  <view class="form-input">
+    <input class="form-input-txt" value="{{serviceHouseName}}" bindinput="inputValue" placeholder="请输入小区名称" />
+    <view class="form-unit"></view>
+  </view>
+</view>

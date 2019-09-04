@@ -1,0 +1,154 @@
+page {
+  background-color: #f0f0f0;
+}
+.slipt {
+  height: 12rpx;
+  background-color: #d8d8d8;
+}
+.list {
+  padding: 34rpx;
+}
+.item {
+  padding: 38rpx 8rpx 0;
+  background-color: #fff;
+  border-radius: 16rpx;
+}
+.item-top {
+  width: 564rpx;
+  height: 54rpx;
+  margin: 0rpx 0rpx 8rpx 66rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 20rpx;
+  border: 1rpx solid #d7bcad;
+}
+.item-name {
+  font-size: 32rpx;
+  color: #d7bcad;
+  width: 314rpx;
+  text-align: center;
+}
+.set-defualt {
+  width: 250rpx;
+  display: flex;
+  align-items: center;
+}
+.edit-icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 18rpx;
+}
+.edit-txt {
+  font-size: 26rpx;
+  color: #bebebe;
+}
+.slip {
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f2f2f2;
+  padding-left: 14rpx;
+  padding-right: 10rpx;
+}
+.label {
+  width: 140rpx;
+  padding-right: 20rpx;
+  font-size: 26rpx;
+}
+.dd {
+  flex: 1;
+}
+.dd-contact {
+  display: flex;
+  justify-content: space-between;
+}
+.input {
+  font-size: 26rpx;
+}
+.contact {
+  font-size: 26rpx;
+  color: #dd6000;
+}
+.tags {
+  padding: 24rpx 14rpx 38rpx;
+  display: flex;
+  align-items: center;
+}
+.tags-label {
+  width: 130rpx;
+  font-size: 26rpx;
+}
+.tags-dd {
+  display: flex;
+}
+.tag {
+  width: 108rpx;
+  height: 48rpx;
+  font-size: 26rpx;
+  line-height: 48rpx;
+  text-align: center;
+  border: 1rpx solid #c8c8c8;
+  border-radius: 6rpx;
+  margin-right: 32rpx;
+}
+.tag.active {
+  border-color: #c0987f;
+  color: #c0987f;
+}
+.btn {
+  margin-top: 48rpx;
+  width: 322rpx;
+  height: 66rpx;
+  font-size: 32rpx;
+  color: #fff;
+  letter-spacing: 10rpx;
+  border-radius: 30rpx;
+  background-color: #c0987f;
+  line-height: 66rpx;
+}
+.radio-dd {
+  display: flex;
+  align-items: center;
+}
+.radio-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.radio {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  border: 1rpx solid #bf947b;
+  background-color: #fff;
+  margin-right: 16rpx;
+}
+.radio.active {
+  background-color: #c0987f;
+}
+.radio-txt {
+  font-size: 26rpx;
+}
+
+.btns {
+  text-align: center;
+}
+.btn {
+  font-size: 26rpx;
+  border-radius: 28rpx;
+  display: inline-block;
+  height: 54rpx;
+  line-height: 54rpx;
+  letter-spacing: 6rpx;
+}
+.btn-gray {
+  width: 260rpx;
+  border: 1rpx solid #bfbfbf;
+  margin-right: 18rpx;
+}
+.btn-pry {
+  width: 160rpx;
+  border: 1rpx solid #da5500;
+  background-color: transparent;
+  color: #da5500;
+}

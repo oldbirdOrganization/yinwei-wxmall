@@ -1,0 +1,34 @@
+page {
+  background-color: #f0f0f0;
+}
+.tab{
+  display: flex;
+  align-items: center;
+  height: 96rpx;
+  border-bottom: 1rpx solid #e7e6e3;
+}
+.tab-item{
+  width: 33%;
+  text-align: center;
+  font-size: 26rpx;
+}
+.tab-item.active{
+  color: #c0987f;
+}
+.list{
+	padding: 44rpx;
+}
+
+.empty{
+  text-align: center;
+}
+.empty-img{
+  width: 378rpx;
+  height: 164rpx;
+  margin-top: 134rpx;
+}
+.empty-txt{
+  font-size: 24rpx;
+  color: #a4a5a7;
+  text-align: center;
+}

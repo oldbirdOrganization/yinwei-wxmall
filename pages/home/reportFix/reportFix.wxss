@@ -1,0 +1,129 @@
+@import "../../../static/wxss/modal.wxss";
+.container {
+  background-color: #fff;
+}
+.form {
+  padding: 42rpx 50rpx 54rpx;
+}
+.item {
+  display: flex;
+  min-height: 96rpx;
+  border-bottom: 2rpx solid #d8d8d8;
+}
+.label {
+  padding-left: 24rpx;
+  width: 210rpx;
+  line-height: 96rpx;
+  font-size: 26rpx;
+}
+.input {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 26rpx;
+  width: 430rpx;
+}
+.input-txt {
+  line-height: 96rpx;
+  width: 414rpx;
+  color: rgba(0, 0, 0, 0.6);
+}
+.picker {
+  color: rgba(0, 0, 0, 0.6);
+}
+.icon {
+  width: 40rpx;
+  height: 30rpx;
+}
+.require-item {
+  padding: 8rpx 24rpx;
+  border: 1rpx solid #a5a5a5;
+  border-radius: 24rpx;
+  margin-right: 10rpx;
+  position: relative;
+}
+.require-txt {
+  font-size: 18rpx;
+  color: #8b8b8b;
+}
+.require-btn {
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+.require-icon {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.btm {
+  padding-bottom: 58rpx;
+  position: absolute;
+  left: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+}
+.submit-btn {
+  width: 323rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  background-color: #c0987f;
+  color: #fff;
+  font-size: 32rpx;
+  letter-spacing: 10rpx;
+  border-radius: 28rpx;
+}
+.modal-item {
+  height: 64rpx;
+  padding: 0rpx 46rpx;
+  line-height: 64rpx;
+  border-radius: 38rpx;
+  font-size: 24rpx;
+  border: 1rpx solid #c0987f;
+  color: #c0987f;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+.modal-item.active {
+  background-color: #c0987f;
+  color: #fff;
+}
+.modal-btns {
+  padding-top: 20rpx;
+  display: flex;
+}
+.pics {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+}
+.pic-item,
+.pic {
+  width: 110rpx;
+  height: 110rpx;
+}
+.pic-item {
+  background-color: #d8d8d8;
+  margin-right: 10rpx;
+  position: relative;
+  margin-bottom: 10rpx;
+}
+.camera {
+  width: 100rpx;
+  height: 80rpx;
+  margin-left: 8rpx;
+  vertical-align: top;
+}
+.camera-txt {
+  font-size: 13rpx;
+  text-align: center;
+}
+.close-icon {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}

@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "空调保养维修",
+  "usingComponents": {
+    "service-type": "../../../component/service-type/service-type",
+    "service-time": "../../../component/service-time/service-time",
+    "detail-address": "../../../component/detail-address/detail-address",
+    "service-idea": "../../../component/service-idea/service-idea",
+    "contact-name": "../../../component/contact-name/contact-name",
+    "contact-mobile": "../../../component/contact-mobile/contact-mobile",
+    "form-region": "../../../component/form-region/form-region",
+    "form-item": "../../../component/form-item/form-item",
+    "bespoke-btn": "../../../component/bespoke-btn/bespoke-btn"
+  }
+}

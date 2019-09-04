@@ -1,91 +1,117 @@
-const util = require('../../utils/util.js');
-const api = require('../../config/api.js');
-const user = require('../../services/user.js');
+const util = require("../../utils/util.js");
+const api = require("../../config/api.js");
+const ImgPath = "../../static/images/index/";
 
 //获取应用实例
-const app = getApp()
 Page({
   data: {
     newGoods: [],
     hotGoods: [],
     topics: [],
-    brands: [],
-    floorGoods: [],
+    caseList: [],
     banner: [],
-    channel: []
+    channel: [
+      {
+        url: "/pages/home/category/category?type=1",
+        icon_url: ImgPath + "channel1.png",
+        name: "维修"
+      },
+      {
+        url: "/pages/home/bespokeReform/bespokeReform",
+        icon_url: ImgPath + "channel2.png",
+        name: "改造"
+      },
+      {
+        url: "/pages/home/bespokeDesgin/bespokeDesgin?type=3",
+        icon_url: ImgPath + "channel3.png",
+        name: "设计"
+      },
+      {
+        url: "/pages/home/category/category?type=4",
+        icon_url: ImgPath + "channel4.png",
+        name: "定制化加配"
+      },
+      {
+        url: "/pages/home/bespokeDesgin/bespokeDesgin?type=5",
+        icon_url: ImgPath + "channel5.png",
+        name: "装修"
+      },
+      {
+        url: "/pages/home/bespokeAir/bespokeAir",
+        icon_url: ImgPath + "channel6.png",
+        name: "空调维保"
+      },
+      {
+        url: "/pages/home/bespokeFurniture/bespokeFurniture",
+        icon_url: ImgPath + "channel7.png",
+        name: "家具保养"
+      },
+      {
+        url: "/pages/home/bespokeInspect/bespokeInspect",
+        icon_url: ImgPath + "channel8.png",
+        name: "专业验房"
+      }
+    ]
   },
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
-      title: 'NideShop',
-      desc: '一步E家',
-      path: '/pages/index/index'
-    }
-  },onPullDownRefresh(){
-	  	// 增加下拉刷新数据的功能
-	    var self = this;
-	    this.getIndexData();
- },
-  getIndexData: function () {
-    let that = this;
-    var data = new Object();
-    util.request(api.IndexUrlNewGoods).then(function (res) {
-      if (res.errno === 0) {
-        data.newGoods= res.data.newGoodsList
-      that.setData(data);
-      }
-    });
-    util.request(api.IndexUrlHotGoods).then(function (res) {
-      if (res.errno === 0) {
-        data.hotGoods = res.data.hotGoodsList
-      that.setData(data);
-      }
-    });
-    util.request(api.IndexUrlTopic).then(function (res) {
-      if (res.errno === 0) {
-        data.topics = res.data.topicList
-      that.setData(data);
-      }
-    });
-    util.request(api.IndexUrlBrand).then(function (res) {
-      if (res.errno === 0) {
-        data.brand = res.data.brandList
-      that.setData(data);
-      }
-    });
-    util.request(api.IndexUrlCategory).then(function (res) {
-      if (res.errno === 0) {
-        data.floorGoods = res.data.categoryList
-      that.setData(data);
-      }
-    });
-    util.request(api.IndexUrlBanner).then(function (res) {
-
-      if (res.errno === 0) {
-        data.banner = res.data.banner
-      that.setData(data);
-      }
-    });
-    util.request(api.IndexUrlChannel).then(function (res) {
-      if (res.errno === 0) {
-        data.channel = res.data.channel
-      that.setData(data);
-      }
-    });
-
+      title: "NideShop",
+      desc: "一步E家",
+      path: "/pages/index/index"
+    };
   },
-  onLoad: function (options) {
+  onPullDownRefresh() {
     this.getIndexData();
   },
-  onReady: function () {
-    // 页面渲染完成
+  onLoad() {
+    this.getIndexData();
   },
-  onShow: function () {
-    // 页面显示
+  getIndexData() {
+    // banner
+    util.request(api.IndexUrlBanner).then(res => {
+      if (res.errno === 0) {
+        const banner = res.data.banner;
+        this.setData({ banner });
+      }
+    });
+    util.request(api.TopicCase).then(res => {
+      if (res.errno === 0) {
+        const topics = res.data.topicList.filter((val, i) => {
+          return i < 2;
+        });
+        this.setData({ topics, caseList: res.data.topicList });
+      }
+    });
   },
-  onHide: function () {
-    // 页面隐藏
+  showMore() {
+    const list = this.data.topics;
+    if (list.length > 2) {
+      this.setData({
+        topics: this.data.caseList.filter((val, i) => {
+          return i < 2;
+        })
+      });
+    } else {
+      this.setData({
+        topics: this.data.caseList
+      });
+    }
   },
-  onUnload: function () {
-    // 页面关闭
+  goPage: function(ev) {
+    const toUrl = ev.currentTarget.dataset.url;
+    if (!toUrl) return;
+    wx.navigateTo({
+      url: toUrl
+    });
   },
-})
+  goPageCase(ev) {
+    const index = ev.currentTarget.dataset.d;
+    wx.setStorage({
+      key: "case",
+      data: this.data.caseList[index]
+    });
+    wx.navigateTo({
+      url: "/pages/home/case/case"
+    });
+  }
+});

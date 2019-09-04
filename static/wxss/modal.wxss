@@ -1,0 +1,19 @@
+/* 弹出框 */
+.modal-con {
+  width: 654rpx;
+  border-radius: 50rpx;
+  background-color: #fff;
+  padding: 66rpx 72rpx 36rpx;
+}
+.modal-btn {
+  background-color: #c0987f;
+  font-size: 24rpx;
+  color: #fff;
+  letter-spacing: 24rpx;
+  width: 170rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  padding-right: 4rpx;
+  border-radius: 24rpx;
+}

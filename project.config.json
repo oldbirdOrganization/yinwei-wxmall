@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.0",
-	"appid": "wx360caafc665376c7",
-	"projectname": "wxshop",
+	"libVersion": "2.8.0",
+	"appid": "wxeacacee36ef0e30c",
+	"projectname": "yinwei-wxmall",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -30,31 +30,217 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 19,
 			"list": [
 				{
 					"id": 0,
-					"name": "选择优惠券",
-					"pathName": "pages/shopping/selCoupon/selCoupon",
-					"query": "isBuy=false"
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "分类页",
+					"pathName": "pages/home/category/category",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "改造预约",
+					"pathName": "pages/home/bespokeReform/bespokeReform",
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "订单界面",
-					"pathName": "pages/shopping/checkout/checkout",
-					"query": "isBuy=true"
+					"name": "服务报价",
+					"pathName": "pages/priceServer/priceServer",
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "我的优惠券",
-					"pathName": "pages/ucenter/coupon/coupon",
-					"query": "isBuy=true"
+					"name": "个人中心",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "一键维修",
+					"pathName": "pages/home/reportFix/reportFix",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "预约结果页",
+					"pathName": "pages/home/bespokeResult/bespokeResult",
+					"query": "flag=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "栩桐",
+					"pathName": "pages/partner/xutong/xutong",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "红包中心",
+					"pathName": "pages/client/coupon/coupon",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "我的红包",
+					"pathName": "pages/client/myCoupon/myCoupon",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "积分兑换",
+					"pathName": "pages/client/exchange/exchange",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "车丽饰",
+					"pathName": "pages/partner/chelishi/chelishi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的消息",
+					"pathName": "pages/client/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "积分说明",
+					"pathName": "pages/client/pointDesc/pointDesc",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "经典案例",
+					"pathName": "pages/home/case/case",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "暖通",
+					"pathName": "pages/partner/nuantong/nuantong",
+					"query": "",
+					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "我的订单",
-					"pathName": "pages/ucenter/order/order",
-					"query": ""
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/client/set/set",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/client/address/address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "服务评价",
+					"pathName": "pages/postComment/postComment",
+					"query": "orderNo=201908202200220704",
+					"scene": null
+				},
+				{
+					"id": 20,
+					"name": "添加地址",
+					"pathName": "pages/client/addAdress/addAdress",
+					"query": "id=3",
+					"scene": null
+				},
+				{
+					"id": 21,
+					"name": "订单详情",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": "orderNo=201908171952100406",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/client/info/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "手机登录",
+					"pathName": "pages/auth/mobile/mobile",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "定制化预约",
+					"pathName": "pages/home/bespokeCustom/bespokeCustom",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "空调保养维修",
+					"pathName": "pages/home/bespokeAir/bespokeAir",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "家具保养预约",
+					"pathName": "pages/home/bespokeFurniture/bespokeFurniture",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "专业验房预约",
+					"pathName": "pages/home/bespokeInspect/bespokeInspect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设计预约",
+					"pathName": "pages/home/bespokeDesgin/bespokeDesgin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 29,
+					"name": "pages/auth/login/login",
+					"pathName": "pages/auth/login/login",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

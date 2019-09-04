@@ -1,0 +1,36 @@
+@import "../../static/wxss/form.wxss";
+.plan-item {
+  border-bottom: 2rpx solid #d8d8d8;
+}
+.plan-select {
+  display: flex;
+}
+.plan-list {
+  padding-bottom: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.plan {
+  padding: 20rpx 15rpx;
+}
+.plan-img {
+  width: 128rpx;
+  height: 104rpx;
+  border-radius: 16rpx;
+  vertical-align: top;
+}
+.plan-btn {
+  width: 116rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 24rpx;
+  border: 1rpx solid #c0987f;
+  border-radius: 16rpx;
+  margin-left: 8rpx;
+  text-align: center;
+  margin-top: 16rpx;
+}
+.plan-btn.active {
+  background-color: #c0987f;
+  color: #fff;
+}

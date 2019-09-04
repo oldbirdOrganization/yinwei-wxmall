@@ -1,0 +1,14 @@
+.empty{
+  width: 100%;
+}
+.empty-img{
+  width: 378rpx;
+  height: 164rpx;
+  margin-top: 134rpx;
+  margin-left: 186rpx;
+}
+.empty-txt{
+  font-size: 24rpx;
+  color: #a4a5a7;
+  text-align: center;
+}

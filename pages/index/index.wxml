@@ -1,108 +1,65 @@
-
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
-  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
-    <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
+  <view class="top-bg">
+    <image class="red-ev" bindtap="goPage" data-url="/pages/client/coupon/coupon" src="../../static/images/icon/red-ev.png" />
+  </view>
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000" circular="true" indicator-color="#fff" indicator-active-color="#df6c01">
+    <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}" class="banner-item">
       <navigator url="{{item.link}}">
-        <image src="{{item.image_url}}" background-size="cover"></image>
+        <image src="{{item.image_url}}" class="banner-img"></image>
       </navigator>
     </swiper-item>
   </swiper>
-<view class="a-section a-topic" wx:if="{{channel.length > 0}}">
-  <view class="m-menu">
-    <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
-      <image src="{{item.icon_url}}" background-size="cover"></image>
-      <text>{{item.name}}</text>
-    </navigator>
-  </view>
- </view>
-
-<view class="a-section a-topic" wx:if="{{brand.length > 0}}">
-  <view class="a-section a-brand">
-    <view class="h">
-      <navigator url="../brand/brand">
-        <text class="txt">限时优惠</text>
+  <view class="main">
+    <view class="channel" wx:if="{{channel.length > 0}}">
+      <view class="channel-item" data-url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}" bindtap="goPage">
+        <image src="{{item.icon_url}}" class="channel-img"></image>
+        <text class="channel-txt">{{item.name}}</text>
+      </view>
+    </view>
+    <!-- 限时优惠 -->
+    <floor-goods type="1"></floor-goods>
+    <!-- 明星产品 -->
+    <floor-goods type="2"></floor-goods>
+    <!-- 经典案例 -->
+    <view class="card" wx:if="{{topics.length > 0}}">
+      <view class="card-top">
+        <view class="title case-title">
+          <image src="../../static/images/index/card-4.png" class="case-img"></image>
+        </view>
+        <view class="more-btn" wx:if="{{caseList.length > 2}}" bindtap="showMore">更多</view>
+      </view>
+      <view class="card-con">
+        <view class="item" wx:for="{{topics}}" wx:key="item.id" data-d="{{index}}" bindtap="goPageCase">
+          <image class="item-img" src="{{item.item_pic_url}}" mode="aspectFill"></image>
+          <view class="item-mt item-mt-one">
+            <text class="brand">{{item.title}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 合作服务 -->
+    <view class="card mb-14" wx:if="{{brands.length > 0}}">
+      <view class="card-top">
+        <navigator url="" class="title server-title"></navigator>
+      </view>
+    </view>
+    <view class="card mb-14">
+      <navigator url="/pages/partner/nuantong/nuantong">
+        <image class="server-big-img" src="../../static/images/index/server1.png" mode="aspectFill"></image>
       </navigator>
     </view>
-    <view class="b">
-      <view class="item item-1" wx:for="{{brand}}" wx:key="item.id">
-        <navigator url="/pages/brandDetail/brandDetail?id={{item.id}}">
-          <view class="wrap">
-            <image class="img" src="{{item.new_pic_url}}" mode="aspectFill"></image>
-            <view class="mt">
-              <text class="brand">{{item.name}}</text>
-              <text class="price">{{item.floor_price}}</text>
-              <text class="unit">元起</text>
-            </view>
-          </view>
+    <view class="server-wrap">
+      <view class="card">
+        <navigator url="/pages/partner/xutong/xutong">
+          <image class="server-small-img" src="../../static/images/index/server2.png" mode="aspectFill"></image>
+        </navigator>
+      </view>
+      <view class="card">
+        <navigator url="/pages/partner/chelishi/chelishi">
+          <image class="server-small-img" src="../../static/images/index/server3.png" mode="aspectFill"></image>
         </navigator>
       </view>
     </view>
   </view>
-  </view>
-
-  <view class="a-section a-topic" wx:if="{{topics.length > 0}}">
-    <view class="h">
-      <view>
-      <navigator url="../topic/topic" open-type="switchTab">
-        <text class="txt">明星产品</text>
-        </navigator>
-      </view>
-    </view>
-    <view class="b">
-      <scroll-view scroll-x="true" class="list">
-        <view class="item" wx:for="{{topics}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
-          <navigator url="../topicDetail/topicDetail?id={{item.id}}">
-            <image class="img" src="{{item.scene_pic_url}}" background-size="cover"></image>
-            <view class="np">
-              <text class="name">{{item.title}}</text>
-              <text class="price">￥{{item.price_info}}元起</text>
-            </view>
-            <text class="desc">{{item.subtitle}}</text>
-          </navigator>
-        </view>
-      </scroll-view>
-    </view>
-  </view>
-
-  <view class="a-section a-new" wx:if="{{newGoods.length > 0}}">
-    <view class="h">
-      <view>
-        <navigator url="../newGoods/newGoods">
-          <text class="txt">经典案例 小户型大空间</text>
-        </navigator>
-      </view>
-    </view>
-    <view class="b">
-      <view class="item" wx:for="{{newGoods}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
-        <navigator url="../goods/goods?id={{item.id}}">
-          <image class="img" src="{{item.list_pic_url}}" background-size="cover"></image>
-          <text class="name">{{item.name}}</text>
-          <text class="price">￥{{item.retail_price}}</text>
-        </navigator>
-      </view>
-    </view>
-  </view>
-
- 
-
-  <view class="a-section a-new" wx:if="{{newGoods.length > 0}}">
-    <view class="h">
-      <view>
-        <navigator url="../newGoods/newGoods">
-          <text class="txt">合作服务</text>
-        </navigator>
-      </view>
-    </view>
-    <view class="b">
-      <view class="item" wx:for="{{newGoods}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
-        <navigator url="../goods/goods?id={{item.id}}">
-          <image class="img" src="{{item.list_pic_url}}" background-size="cover"></image>
-          <text class="name">{{item.name}}</text>
-          <text class="price">￥{{item.retail_price}}</text>
-        </navigator>
-      </view>
-    </view>
-  </view>
-
 </view>

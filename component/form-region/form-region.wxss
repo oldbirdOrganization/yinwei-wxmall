@@ -1,0 +1,4 @@
+@import "../../static/wxss/form.wxss";
+.picker {
+  color: rgba(0, 0, 0, 0.6);
+}

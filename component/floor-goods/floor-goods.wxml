@@ -1,0 +1,23 @@
+<view class="card" wx:if="{{list.length > 0}}">
+  <view class="card-top">
+    <view class="title brand-title">
+      <image src="{{titleSrc}}" class="card-img"></image>
+    </view>
+    <view wx:if="{{list.length > 2}}" class="more-btn" bindtap="showMore">更多</view>
+  </view>
+  <view class="card-con">
+    <navigator class="item" wx:for="{{goodsList}}" wx:key="item.id" url="/pages/home/bespokeReform/bespokeReform?id={{item.id}}">
+      <image class="item-img" src="{{item.list_pic_url}}" mode="aspectFill"></image>
+      <view class="item-mt" wx:if="{{item.retail_price}}">
+        <text class="price-wrap">
+          <text class="price">{{item.retail_price}}</text>
+          <text class="unit">元起</text>
+        </text>
+        <text class="brand">{{item.name}}</text>
+      </view>
+      <view class="item-mt item-mt-one" wx:else>
+        <text class="brand">{{item.name}}</text>
+      </view>
+    </navigator>
+  </view>
+</view>

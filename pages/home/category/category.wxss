@@ -1,0 +1,67 @@
+.container {
+  padding: 18rpx 28rpx;
+  border-top: 1rpx solid #bfbfbf;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.fix-menu-item {
+  background-color: #f0f0f0;
+  height: 120rpx;
+  width: 214rpx;
+  line-height: 124rpx;
+  border-top: 1rpx solid #b8b8b8;
+  border-left: 8rpx solid #f0f0f0;
+  text-align: center;
+}
+.fix-menu-item:first-child {
+  border-top: none;
+}
+.fix-menu-item.active {
+  background-color: #fff;
+  border-left-color: #c0987e;
+}
+.fix-menu-item.active:first-child {
+  border-top: 1rpx solid #b8b8b8;
+}
+.fix-menu-item.active:last-child {
+  border-bottom: 1rpx solid #b8b8b8;
+}
+.fix-right {
+  width: 446rpx;
+}
+.banner,
+.banner-img {
+  width: 446rpx;
+  height: 215rpx;
+}
+.fix-list {
+  margin-top: 18rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.fix-item {
+  display: flex;
+}
+.fix-item-img {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+.fix-item-name {
+  font-size: 20rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  text-align: center;
+  width: 180rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fix-item-icon {
+  width: 14rpx;
+  height: 24rpx;
+  margin-top: 78rpx;
+  margin-left: 10rpx;
+}
