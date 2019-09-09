@@ -1,6 +1,7 @@
 // 订单提交
 const util = require("../utils/util.js");
 const api = require("../config/api.js");
+const login = require("../services/login.js");
 const pay = require("../services/pay.js");
 
 function submitOrder(data, needPay) {
@@ -40,17 +41,24 @@ function submitOrder(data, needPay) {
       .request(api.SubmitOrder, params, "POST", "application/json")
       .then(res => {
         const flag = res.errno === 0 ? 1 : 0;
-        if (flag && needPay) {
-          wx.navigateTo({
-            url: "/pages/orderDetail/orderDetail?orderNo=" + res.data
-          });
-          resove();
+        if (needPay) {
+          if (flag) {
+            wx.navigateTo({
+              url: "/pages/orderDetail/orderDetail?orderNo=" + res.data
+            });
+          } else {
+            wx.showToast({
+              title: res.errmsg,
+              icon: "none",
+              duration: 1000
+            });
+          }
         } else {
           wx.navigateTo({
             url: "/pages/home/bespokeResult/bespokeResult?flag=" + flag
           });
-          resove();
         }
+        resove();
       });
   });
 }

@@ -72,6 +72,7 @@
   font-size: 32rpx;
   letter-spacing: 10rpx;
   border-radius: 28rpx;
+  margin: 0 auto;
 }
 .modal-item {
   height: 64rpx;

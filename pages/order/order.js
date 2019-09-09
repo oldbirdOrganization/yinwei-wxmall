@@ -26,6 +26,8 @@ Page({
       type: +options.type
     });
     this.getDesignate();
+    this.getConfirm();
+    this.getPayment();
   },
   cancelOrder(ev) {
     const index = +ev.currentTarget.dataset.d;
@@ -129,7 +131,7 @@ Page({
   },
   // 获取待付款列表
   getPayment() {
-    util.request(api.FinishOrder, {}, "GET").then(res => {
+    util.request(api.PaymentOrder, {}, "GET").then(res => {
       if (res.errno === 0) {
         const list = res.data;
         list.some(val => {
@@ -144,7 +146,7 @@ Page({
   },
   // 获取完成列表
   getFinish() {
-    util.request(api.PaymentOrder, {}, "GET").then(res => {
+    util.request(api.FinishOrder, {}, "GET").then(res => {
       if (res.errno === 0) {
         const list = res.data;
         list.some(val => {

@@ -3,18 +3,18 @@ const api = require("../config/api");
 //登录态检测
 function login() {
   return new Promise(function(resolve, reject) {
-    if (wx.getStorageSync("token")) {
-      wx.checkSession({
-        success() {
-          resolve(wx.getStorageSync("userInfo"));
-        },
-        fail() {
-          login_wx(resolve);
-        }
-      });
-    } else {
-      login_wx(resolve);
-    }
+    // if (wx.getStorageSync("token")) {
+    //   wx.checkSession({
+    //     success() {
+    //       resolve(wx.getStorageSync("userInfo"));
+    //     },
+    //     fail() {
+    //       login_wx(resolve);
+    //     }
+    //   });
+    // } else {
+    login_wx(resolve);
+    // }
   });
 }
 function login_wx(resolve) {
