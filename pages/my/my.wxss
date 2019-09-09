@@ -193,3 +193,15 @@ page {
   background-color: #caaa95;
   border-radius: 10rpx;
 }
+.login-btn {
+  width: 323rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  color: #c0987f;
+  font-size: 32rpx;
+  letter-spacing: 10rpx;
+  border-radius: 28rpx;
+  border: 1rpx solid #c0987f;
+  margin: 0 auto;
+}

@@ -20,8 +20,22 @@ text {
   /* font-size: 29rpx; */
   color: #333;
 }
+button {
+  font-size: 28rpx;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  line-height: 1;
+}
+
+input {
+  outline: none;
+  border: none;
+  list-style: none;
+}
 
 button::after {
+  border: none;
   display: none;
 }
 

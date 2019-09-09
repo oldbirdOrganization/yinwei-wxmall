@@ -12,10 +12,10 @@
   </swiper>
   <view class="main">
     <view class="channel" wx:if="{{channel.length > 0}}">
-      <view class="channel-item" data-url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}" bindtap="goPage">
+      <button class="channel-item" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" data-url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
         <image src="{{item.icon_url}}" class="channel-img"></image>
         <text class="channel-txt">{{item.name}}</text>
-      </view>
+      </button>
     </view>
     <!-- 限时优惠 -->
     <floor-goods type="1"></floor-goods>

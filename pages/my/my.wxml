@@ -66,5 +66,5 @@
       </view>
     </view>
   </view>
-  <button bindtap="exitLogin">退出登录</button>
+  <button bindtap="exitLogin" class="login-btn">退出登录</button>
 </view>

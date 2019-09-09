@@ -37,15 +37,24 @@ Page({
       }
     });
   },
-  exitLogin: function() {
+  exitLogin() {
     wx.showModal({
       title: "",
       confirmColor: "#b4282d",
       content: "退出登录？",
-      success: function(res) {
+      success: res => {
         if (res.confirm) {
           wx.removeStorageSync("token");
           wx.removeStorageSync("userInfo");
+          wx.removeStorageSync("userId");
+          this.data = {
+            userInfo: {
+              avatarUrl: "",
+              nickName: ""
+            },
+            level: ""
+          };
+          this.setData(this.data);
           wx.switchTab({
             url: "/pages/index/index"
           });

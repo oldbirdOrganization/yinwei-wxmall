@@ -2,6 +2,9 @@
   padding-top: 64rpx;
   position: relative;
 }
+.button-hover {
+  background-color: transparent;
+}
 .top-bg {
   width: 100%;
   height: 286rpx;

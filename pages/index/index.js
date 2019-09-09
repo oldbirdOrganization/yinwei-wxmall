@@ -2,6 +2,7 @@ const util = require("../../utils/util.js");
 const api = require("../../config/api.js");
 const ImgPath = "../../static/images/index/";
 const login = require("../../services/login");
+const app = getApp();
 
 //获取应用实例
 Page({
@@ -15,12 +16,14 @@ Page({
       {
         url: "/pages/home/category/category?type=1",
         icon_url: ImgPath + "channel1.png",
-        name: "维修"
+        name: "维修",
+        login: true
       },
       {
         url: "/pages/home/bespokeReform/bespokeReform",
         icon_url: ImgPath + "channel2.png",
-        name: "改造"
+        name: "改造",
+        login: false
       },
       {
         url: "/pages/home/bespokeDesgin/bespokeDesgin?type=3",
@@ -98,7 +101,7 @@ Page({
       });
     }
   },
-  goPage: function(ev) {
+  goPage(ev) {
     const toUrl = ev.currentTarget.dataset.url;
     if (!toUrl) return;
     if (toUrl.indexOf("bespoke") !== -1) {
@@ -122,5 +125,9 @@ Page({
     wx.navigateTo({
       url: "/pages/home/case/case"
     });
+  },
+  onGotUserInfo(ev) {
+    app.globalData.userInfo = ev.detail.userInfo;
+    this.goPage(ev);
   }
 });
