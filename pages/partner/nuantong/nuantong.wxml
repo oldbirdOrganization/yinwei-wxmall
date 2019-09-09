@@ -61,24 +61,12 @@
         <view class="unit"></view>
       </view>
     </view>
-    <view class="item">
-      <view class="label">联系人</view>
-      <view class="input">
-        <input class="input-txt" placeholder="请输入姓名" />
-        <view class="unit"></view>
-      </view>
-    </view>
-    <view class="item">
-      <view class="label">联系电话</view>
-      <view class="input">
-        <input class="input-txt" placeholder="请输入联系电话" type="number" />
-        <view class="unit"></view>
-      </view>
-    </view>
+    <contact-name bindget="setItemValue"></contact-name>
+    <contact-mobile bindget="setItemValue"></contact-mobile>
     <form-region bindget="setItemValue"></form-region>
     <detail-address bindget="setItemValue"></detail-address>
     <view class="btn">
-      <button bindtap="submitOrder" class="submit-btn">立即下单</button>
+      <button bindtap="submitOrder" disabled="{{submiting}}" class="submit-btn">立即下单</button>
     </view>
   </view>
   <view class="detail">

@@ -103,7 +103,12 @@ Page({
             ? val.serviceRequired.split(",")
             : [];
         });
-        this.setData({ designateList: list, list });
+        this.data.typeList[0].remain = list.length;
+        this.setData({
+          designateList: list,
+          list,
+          typeList: this.data.typeList
+        });
       }
     });
   },
@@ -117,7 +122,8 @@ Page({
             ? val.serviceRequired.split(",")
             : [];
         });
-        this.setData({ confirmList: list, list });
+        this.data.typeList[1].remain = list.length;
+        this.setData({ confirmList: list, list, typeList: this.data.typeList });
       }
     });
   },
@@ -131,7 +137,8 @@ Page({
             ? val.serviceRequired.split(",")
             : [];
         });
-        this.setData({ paymentList: list, list });
+        this.data.typeList[2].remain = list.length;
+        this.setData({ paymentList: list, list, typeList: this.data.typeList });
       }
     });
   },
@@ -152,7 +159,7 @@ Page({
   goPay(ev) {
     app.globalData.userInfo = ev.detail.userInfo;
     const url = ev.currentTarget.dataset.url;
-    login.login().then(res => {
+    login().then(res => {
       wx.navigateTo({
         url
       });

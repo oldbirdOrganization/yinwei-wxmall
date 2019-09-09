@@ -58,7 +58,6 @@
 
 .btm {
   padding-bottom: 58rpx;
-  position: absolute;
   left: 0rpx;
   bottom: 0rpx;
   width: 100%;

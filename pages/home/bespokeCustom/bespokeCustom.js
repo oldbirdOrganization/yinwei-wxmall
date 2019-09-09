@@ -2,6 +2,7 @@ const util = require("../../../utils/util.js");
 const api = require("../../../config/api.js");
 const submitOrder = require("../../../services/submitOrder.js");
 const ImgPath = require("../../../config/picPath");
+const LocalPath = "../../static/images/index/";
 Page({
   data: {
     channelId: "4",
@@ -10,12 +11,13 @@ Page({
     serviceType: "",
     serviceSpace: "",
     orderPrice: "",
+    isOuterOrder: "0",
     region: ["北京市", "北京市", "东城区"],
     ideaList: [
-      { name: "方案1", src: ImgPath + "plan1.png" },
-      { name: "方案2", src: ImgPath + "plan2.png" },
-      { name: "方案3", src: ImgPath + "plan3.png" },
-      { name: "方案4", src: ImgPath + "plan4.png" }
+      { name: "方案1", src: LocalPath + "plan1.png" },
+      { name: "方案2", src: LocalPath + "plan2.png" },
+      { name: "方案3", src: LocalPath + "plan3.png" },
+      { name: "方案4", src: LocalPath + "plan4.png" }
     ],
     addressTxt: "",
     contactName: "",
@@ -30,7 +32,67 @@ Page({
     });
     this.getCategory();
   },
-  submitOrder,
+  submitOrder() {
+    if (this.data.submiting) {
+      return;
+    }
+    if (!this.data.serviceHouseName) {
+      wx.showToast({
+        title: "请填写小区名称",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.addressTxt) {
+      wx.showToast({
+        title: "请填写详细地址",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.serviceSpace) {
+      wx.showToast({
+        title: "请选择服务空间",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.serviceIdea) {
+      wx.showToast({
+        title: "请选择方案",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.contactName) {
+      wx.showToast({
+        title: "请填写联系人",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.contactMobile) {
+      wx.showToast({
+        title: "请填写联系电话",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    this.setData({
+      submiting: true
+    });
+    submitOrder(this.data, true).then(() => {
+      this.setData({
+        submiting: false
+      });
+    });
+  },
   getCategory() {
     let categoryList = wx.getStorageSync("categoryList");
     if (categoryList && categoryList.length) return;

@@ -10,7 +10,7 @@
   </view>
   <view class="item">
     <view class="label">服务地址：</view>
-    <view class="dd">{{info.address}}</view>
+    <view class="dd">{{info.address || ''}}</view>
   </view>
   <view class="item">
     <view class="label">服务时间：</view>
@@ -50,13 +50,13 @@
     <view class="price">￥0</view>
   </view>
   <view class="tag">维修清单免费项</view>
-  <view class="slip">
+  <!-- <view class="slip">
     <view class="fee-name">优惠券</view>
     <view class="coupon">
       <text class="coupon-amount">2张</text>
       <image class="arrow-icon" src="../../static/images/icon/arrow.png" />
     </view>
-  </view>
+  </view> -->
   <view class="slip">
     <view class="fee-name">改造费用</view>
     <view class="price">￥0</view>

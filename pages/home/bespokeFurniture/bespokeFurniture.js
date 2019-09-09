@@ -5,8 +5,10 @@ const ImgPath = require("../../../config/picPath");
 Page({
   data: {
     channelId: "7",
+    isOuterOrder: "0",
     serviceHouseName: "",
     serviceType: "",
+    serviceTime: "",
     region: ["北京市", "北京市", "东城区"],
     addressTxt: "",
     contactName: "",
@@ -27,8 +29,83 @@ Page({
     submiting: false,
     image_url: ImgPath + "1800283829266e.jpg"
   },
-  onLoad(options) {},
-  submitOrder,
+  onLoad(options) {
+    const date = new Date();
+    const h = date.getHours();
+    const m = date.getMinutes();
+    this.setData({
+      serviceTime: `${h}:${m}`
+    });
+  },
+  submitOrder() {
+    if (this.data.submiting) {
+      return;
+    }
+    if (!this.data.serviceType) {
+      wx.showToast({
+        title: "请选择服务类型",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.serviceTime) {
+      wx.showToast({
+        title: "请选择服务时间",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.serviceFurniture) {
+      wx.showToast({
+        title: "请填写家具名称",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.problemDescription) {
+      wx.showToast({
+        title: "请填写问题描述",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.contactName) {
+      wx.showToast({
+        title: "请填写联系人",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.contactMobile) {
+      wx.showToast({
+        title: "请填写联系电话",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.addressTxt) {
+      wx.showToast({
+        title: "请填写地址",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    this.setData({
+      submiting: true
+    });
+    submitOrder(this.data).then(() => {
+      this.setData({
+        submiting: false
+      });
+    });
+  },
   setItemValue(args) {
     const data = this.data;
     data[args.detail.key] = args.detail.val;
@@ -36,7 +113,12 @@ Page({
   },
   inputDescription(ev) {
     this.setData({
-      contactName: ev.detail.value
+      problemDescription: ev.detail.value
+    });
+  },
+  inputServiceFurniture(ev) {
+    this.setData({
+      serviceFurniture: ev.detail.value
     });
   },
   selectCamera() {

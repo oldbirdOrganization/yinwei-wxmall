@@ -21,7 +21,7 @@ Page({
   },
   checkOrder() {
     wx.navigateTo({
-      url: "/pages/order/order"
+      url: "/pages/order/order?type=1"
     });
   }
 });

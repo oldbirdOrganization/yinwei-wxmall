@@ -36,7 +36,7 @@
   <view class="card order">
     <view class="card-top">我的订单</view>
     <view class="card-con">
-      <view class="order-item" data-url="/pages/order/order" bindtap="goPage">
+      <view class="order-item" data-url="/pages/order/order?type=4" bindtap="goPage">
         <image class="order-img" src="../../static/images/order-all.png"></image>
         <view class="order-txt">全部订单</view>
       </view>

@@ -13,6 +13,7 @@ Page({
     region: ["北京市", "北京市", "东城区"],
     addressTxt: "",
     outerServiceCombo: "套餐1",
+    isOuterOrder: "1",
     orderPrice: "9500",
     brandList: [],
     showBrandList: false,
@@ -82,12 +83,49 @@ Page({
       { name: "型号1", code: "COLOR", src: "", active: true },
       { name: "型号2", code: "1880T", src: "", active: false },
       { name: "型号3", code: "T800", src: "", active: false }
-    ]
+    ],
+    submiting: false
   },
   onLoad(options) {
     this.getBrands();
   },
-  submitOrder,
+  submitOrder() {
+    if (this.data.submiting) {
+      return;
+    }
+    if (!this.data.contactName) {
+      wx.showToast({
+        title: "请填写联系人",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.contactMobile) {
+      wx.showToast({
+        title: "请填写联系电话",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.addressTxt) {
+      wx.showToast({
+        title: "请填写地址",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    this.setData({
+      submiting: true
+    });
+    submitOrder(this.data, true).then(() => {
+      this.setData({
+        submiting: false
+      });
+    });
+  },
   getBrands() {
     util.request(api.BrandList, { isOuterBrand: 1 }).then(res => {
       if (res.errno === 0) {

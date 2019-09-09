@@ -1,8 +1,6 @@
 var util = require("../../utils/util.js");
 var api = require("../../config/api.js");
 var login = require("../../services/login.js");
-var app = getApp();
-
 Page({
   data: {
     userInfo: {
@@ -23,8 +21,7 @@ Page({
       });
       this.getLevel();
     } else {
-      login.login().then(res => {
-        console.log(res);
+      login().then(res => {
         this.setData({
           userInfo: res
         });

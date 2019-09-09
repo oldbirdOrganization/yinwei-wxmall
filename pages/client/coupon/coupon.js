@@ -29,7 +29,7 @@ Page({
   },
   onGotUserInfo(ev) {
     app.globalData.userInfo = ev.detail.userInfo;
-    login.login().then(res => {
+    login().then(res => {
       wx.navigateTo({
         url: "/pages/client/myCoupon/myCoupon"
       });

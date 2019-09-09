@@ -35,7 +35,7 @@ page {
 }
 .problem-input {
   font-size: 26rpx;
-  color: #dddddd;
+  color: #333;
 }
 .problem-imgs {
   border-radius: 32rpx;

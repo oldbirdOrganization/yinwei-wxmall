@@ -1,6 +1,6 @@
 var util = require("../../utils/util.js");
 var api = require("../../config/api.js");
-var login = require("../../services/login.js");
+var pay = require("../../services/pay.js");
 var app = getApp();
 
 const OrderTypeMap = {
@@ -43,45 +43,24 @@ Page({
   },
   //支付
   pay() {
-    login.login().then(() => {
-      util
-        .request(api.PayPrepayId, { orderNo: this.data.orderNo })
-        .then(res => {
-          const { nonceStr, paySign, signType, timeStamp } = res.data;
-          const pa = res.data.package;
-          if (res.errno == 0) {
-            wx.requestPayment({
-              timeStamp,
-              nonceStr,
-              package: pa,
-              signType,
-              paySign,
-              success(res) {
-                wx.showToast({
-                  title: "订单支付成功",
-                  icon: "success",
-                  duration: 1000
-                });
-                wx.navigateTo({
-                  url: "/pages/order/order"
-                });
-              },
-              fail(res) {
-                wx.showToast({
-                  title: "订单支付失败",
-                  icon: "none",
-                  duration: 1000
-                });
-              }
-            });
-          } else {
-            wx.showToast({
-              title: "订单支付失败",
-              icon: "none",
-              duration: 1000
-            });
-          }
+    if (this.data.info.orderPrice === "0" || !this.data.info.orderPrice) return;
+    pay(this.data.orderNo)
+      .then(res => {
+        wx.showToast({
+          title: "订单支付成功",
+          icon: "success",
+          duration: 1000
         });
-    });
+        wx.navigateTo({
+          url: "/pages/order/order"
+        });
+      })
+      .catch(() => {
+        wx.showToast({
+          title: "订单支付失败",
+          icon: "none",
+          duration: 1000
+        });
+      });
   }
 });

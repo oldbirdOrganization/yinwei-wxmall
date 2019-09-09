@@ -8,9 +8,9 @@
   </view>
   <view class="main">
     <!-- 限时优惠 -->
-    <floor-goods list="{{newGoods}}"></floor-goods>
+    <floor-goods type="1"></floor-goods>
     <!-- 明星产品 -->
-    <floor-goods list="{{hotGoods}}"></floor-goods>
+    <floor-goods type="2"></floor-goods>
     <view class="card" wx:if="{{brands.length > 0}}">
       <view class="card-top">
         <navigator url="../brand/brand" class="title goods-title"></navigator>

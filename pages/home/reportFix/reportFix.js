@@ -4,6 +4,7 @@ const api = require("../../../config/api.js");
 const app = getApp();
 Page({
   data: {
+    channelId: "1",
     requires: [],
     requirePool: [
       { txt: "涂料色差、流坠、破损", active: false },
@@ -34,8 +35,49 @@ Page({
   onPullDownRefresh() {},
   onLoad: function(options) {
     this.data.goodsId = options.id;
+    this.data.orderPrice = options.price;
+    const date = new Date();
+    const h = date.getHours();
+    const m = date.getMinutes();
+    this.setData({
+      serviceTime: `${h}:${m}`
+    });
   },
-  submitOrder,
+  submitOrder() {
+    if (!this.data.contactName) {
+      wx.showToast({
+        title: "请填写联系人",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.address) {
+      wx.showToast({
+        title: "请填写地址",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.requires.length) {
+      wx.showToast({
+        title: "请选择需求",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.problemDescription) {
+      wx.showToast({
+        title: "请填写问题描述",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    submitOrder(this.data, true);
+  },
   setItemValue(args) {
     const data = this.data;
     data[args.detail.key] = args.detail.val;
@@ -70,7 +112,8 @@ Page({
             filePath: val,
             name: "file",
             success(resp) {
-              imgVoList.push({ url: resp.data });
+              const data = JSON.parse(resp.data);
+              imgVoList.push({ url: data.data });
               imgs[imgLen].src = val;
               imgs[imgLen].isCamera = false;
               imgLen++;
@@ -99,7 +142,9 @@ Page({
     const index = ev.currentTarget.dataset.index;
     let imgs = this.data.imgs;
     let imgLen = this.data.imgLen;
+    let imgVoList = this.data.imgVoList;
     imgs.splice(index, 1);
+    imgVoList.splice(index, 1);
     imgLen--;
     if (imgLen <= 1) {
       imgs.splice(1, 0, { src: "" });
@@ -108,7 +153,7 @@ Page({
     } else {
       imgs[imgLen].isCamera = true;
     }
-    this.setData({ imgs, imgLen });
+    this.setData({ imgs, imgLen, imgVoList });
   },
   showModal() {
     const { requires, requirePool } = this.data;

@@ -13,10 +13,10 @@
           <text class="price">{{item.retail_price}}</text>
           <text class="unit">元起</text>
         </text>
-        <text class="brand">{{item.name}}</text>
+        <text class="brand" wx:if="{{item.name}}">{{item.name}}</text>
       </view>
       <view class="item-mt item-mt-one" wx:else>
-        <text class="brand">{{item.name}}</text>
+        <text class="brand" wx:if="{{item.name}}">{{item.name}}</text>
       </view>
     </navigator>
   </view>

@@ -1,6 +1,7 @@
 const util = require("../../../utils/util.js");
 const api = require("../../../config/api.js");
 const ImgPath = "../../../static/images/index/";
+const login = require("../../../services/login.js");
 //获取应用实例
 const app = getApp();
 Page({
@@ -35,21 +36,10 @@ Page({
   },
   // 获取栏目
   getList() {
-    let categoryList = wx.getStorageSync("categoryList");
-    if (categoryList && categoryList.length) {
-      this.setData({
-        menu: categoryList
-      });
-      this.getDetail(categoryList[0].id);
-      return;
-    }
     util.request(api.CategoryList, {}, "GET").then(res => {
       if (res.errno === 0) {
         this.setData({
           menu: res.data.categoryList
-        });
-        wx.setStorageSync({
-          categoryList: res.data.categoryList
         });
         this.getDetail(res.data.categoryList[0].id);
       }
@@ -66,16 +56,18 @@ Page({
       });
   },
   goDetailPage(ev) {
-    const { id, price } = ev.currentTarget.dataset;
-    const toUrl =
-      this.channelId === "1"
-        ? "/pages/home/reportFix/reportFix?id=" + id
-        : "/pages/home/bespokeCustom/bespokeCustom?id=" +
-          id +
-          "&price=" +
-          price;
-    wx.navigateTo({
-      url: toUrl
+    login().then(() => {
+      const { id, price } = ev.currentTarget.dataset;
+      const toUrl =
+        this.channelId === "1"
+          ? "/pages/home/reportFix/reportFix?id=" + id + "&price=" + price
+          : "/pages/home/bespokeCustom/bespokeCustom?id=" +
+            id +
+            "&price=" +
+            price;
+      wx.navigateTo({
+        url: toUrl
+      });
     });
   }
 });

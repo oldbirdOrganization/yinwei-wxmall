@@ -72,7 +72,7 @@ Page({
       }
     });
   },
-  inputVlaue(ev) {
+  inputItem(ev) {
     const key = ev.currentTarget.dataset.d;
     const data = this.data;
     data[key] = ev.detail.value;

@@ -101,10 +101,8 @@ page {
 }
 
 .btm {
-  position: absolute;
-  left: 0rpx;
-  bottom: 40rpx;
   width: 100%;
+  margin-top: 30rpx;
 }
 .submit-btn {
   width: 323rpx;

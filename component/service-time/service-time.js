@@ -3,6 +3,16 @@ Component({
   data: {
     serviceTime: ""
   },
+  lifetimes: {
+    attached() {
+      const date = new Date();
+      const h = date.getHours();
+      const m = date.getMinutes();
+      this.setData({
+        serviceTime: `${h}:${m}`
+      });
+    }
+  },
   methods: {
     bindValue(ev) {
       this.setData({

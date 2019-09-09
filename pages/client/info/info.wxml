@@ -3,39 +3,39 @@
   <view class="list">
     <view class="item">
       <view class="name">
-        <image class="item-icon" src="../../../static/images/icon/info-avat.png"/>
+        <image class="item-icon" src="../../../static/images/icon/info-avat.png" />
         <view class="txt">个人头像</view>
       </view>
-      <image class="icon" src="../../../static/images/icon/arrow.png"/>
+      <image class="icon" src="../../../static/images/icon/arrow.png" />
     </view>
     <view class="item">
       <view class="name">
-        <image class="item-icon" src="../../../static/images/icon/info-nike.png"/>
+        <image class="item-icon" src="../../../static/images/icon/info-nike.png" />
         <view class="txt">昵称</view>
       </view>
     </view>
     <view class="item">
       <view class="name">
-        <image class="item-icon" src="../../../static/images/icon/info-name.png"/>
+        <image class="item-icon" src="../../../static/images/icon/info-name.png" />
         <view class="txt">姓名</view>
       </view>
     </view>
     <view class="item">
       <view class="name">
-        <image class="item-icon" src="../../../static/images/icon/info-phone.png"/>
+        <image class="item-icon" src="../../../static/images/icon/info-phone.png" />
         <view class="txt">电话</view>
       </view>
     </view>
     <view class="item">
       <view class="name">
-        <image class="item-icon" src="../../../static/images/icon/info-id.png"/>
+        <image class="item-icon" src="../../../static/images/icon/info-id.png" />
         <view class="txt">身份证号码</view>
       </view>
     </view>
     <view class="item">
       <view class="name">
-        <image class="item-icon" src="../../../static/images/icon/info-address.png"/>
-        <view class="txt">地址</view>
+        <image class="item-icon" src="../../../static/images/icon/info-address.png" />
+        <view class="txt" data-url="/pages/client/address/address" bindtap="goPage">地址</view>
       </view>
     </view>
   </view>

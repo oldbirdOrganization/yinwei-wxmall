@@ -71,8 +71,9 @@ Page({
     contactMobile: "",
     outerMerchantName: "车丽饰",
     isOuterOrder: "1",
-    outerServiceCombo: "",
-    orderPrice: ""
+    outerServiceCombo: "无赔付",
+    orderPrice: 12000,
+    submiting: false
   },
   onPullDownRefresh() {},
   onLoad: function(options) {
@@ -80,12 +81,43 @@ Page({
       list: this.data.list1
     });
   },
-  submitOrder,
+  submitOrder() {
+    if (this.data.submiting) {
+      return;
+    }
+    if (!this.data.contactName) {
+      wx.showToast({
+        title: "请填写联系人",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    if (!this.data.contactMobile) {
+      wx.showToast({
+        title: "请填写联系电话",
+        icon: "none",
+        duration: 1000
+      });
+      return;
+    }
+    this.setData({
+      submiting: true
+    });
+    submitOrder(this.data, true).then(() => {
+      this.setData({
+        submiting: false
+      });
+    });
+  },
   changeType: function(ev) {
     const i = ev.currentTarget.dataset.index;
+    const list = this.data["list" + (i + 1)];
     this.setData({
       activeIndex: i,
-      list: this.data["list" + (i + 1)]
+      list,
+      outerServiceCombo: list[0].name,
+      orderPrice: list[0].price
     });
   },
   select(ev) {

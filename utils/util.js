@@ -33,6 +33,7 @@ function request(
   wx.showLoading({
     title: "加载中..."
   });
+  const userId = wx.getStorageSync("userId") || "";
   return new Promise(function(resolve, reject) {
     wx.request({
       url: url,
@@ -40,6 +41,8 @@ function request(
       method: method,
       header: {
         "Content-Type": header,
+        LOGIN_USER_KEY: userId,
+        "X-Yinweimall-Token": wx.getStorageSync("token"),
         "X-Nideshop-Token": wx.getStorageSync("token")
       },
       success: function(res) {

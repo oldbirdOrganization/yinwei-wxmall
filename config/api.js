@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://120.55.161.193:10060/platform-yinwei/api/";
+const API_BASE_URL = "https://arrayfly.com:20012/platform-yinwei/api/";
 module.exports = {
   CategoryList: API_BASE_URL + "catalog/indexCatalog", //分类
   CategoryDetail: API_BASE_URL + "goods/goodsList", //分类下的商品

@@ -1,6 +1,7 @@
 const util = require("../../utils/util.js");
 const api = require("../../config/api.js");
 const ImgPath = "../../static/images/index/";
+const login = require("../../services/login");
 
 //获取应用实例
 Page({
@@ -100,9 +101,17 @@ Page({
   goPage: function(ev) {
     const toUrl = ev.currentTarget.dataset.url;
     if (!toUrl) return;
-    wx.navigateTo({
-      url: toUrl
-    });
+    if (toUrl.indexOf("bespoke") !== -1) {
+      login().then(() => {
+        wx.navigateTo({
+          url: toUrl
+        });
+      });
+    } else {
+      wx.navigateTo({
+        url: toUrl
+      });
+    }
   },
   goPageCase(ev) {
     const index = ev.currentTarget.dataset.d;
