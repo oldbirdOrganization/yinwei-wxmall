@@ -29,6 +29,7 @@ Page({
     const h = date.getHours();
     const m = date.getMinutes();
     this.getBrands();
+
   },
   submitOrder() {
     console.log(this.data.serviceTime);
