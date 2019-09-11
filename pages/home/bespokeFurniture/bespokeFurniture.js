@@ -9,7 +9,7 @@ Page({
     serviceHouseName: "",
     serviceType: "",
     serviceTime: "",
-    region: ["北京市", "北京市", "东城区"],
+    region: ["上海市", "上海市", "黄浦区"],
     addressTxt: "",
     contactName: "",
     contactMobile: "",
@@ -33,9 +33,6 @@ Page({
     const date = new Date();
     const h = date.getHours();
     const m = date.getMinutes();
-    this.setData({
-      serviceTime: `${h}:${m}`
-    });
   },
   submitOrder() {
     if (this.data.submiting) {
@@ -60,14 +57,6 @@ Page({
     if (!this.data.serviceFurniture) {
       wx.showToast({
         title: "请填写家具名称",
-        icon: "none",
-        duration: 1000
-      });
-      return;
-    }
-    if (!this.data.problemDescription) {
-      wx.showToast({
-        title: "请填写问题描述",
         icon: "none",
         duration: 1000
       });

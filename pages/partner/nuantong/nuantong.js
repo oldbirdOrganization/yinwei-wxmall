@@ -10,7 +10,7 @@ Page({
     brandType: 1,
     showPackage: false,
     outerServiceBrand: "",
-    region: ["北京市", "北京市", "东城区"],
+    region: ["上海市", "上海市", "黄浦区"],
     addressTxt: "",
     outerServiceCombo: "套餐1",
     isOuterOrder: "1",

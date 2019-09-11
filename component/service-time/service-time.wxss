@@ -2,3 +2,6 @@
 .picker {
   color: rgba(0, 0, 0, 0.6);
 }
+.split {
+  margin-right: 10rpx;
+}

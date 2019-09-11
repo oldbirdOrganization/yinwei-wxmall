@@ -39,9 +39,6 @@ Page({
     const date = new Date();
     const h = date.getHours();
     const m = date.getMinutes();
-    this.setData({
-      serviceTime: `${h}:${m}`
-    });
   },
   submitOrder() {
     if (!this.data.contactName) {
@@ -63,14 +60,6 @@ Page({
     if (!this.data.requires.length) {
       wx.showToast({
         title: "请选择需求",
-        icon: "none",
-        duration: 1000
-      });
-      return;
-    }
-    if (!this.data.problemDescription) {
-      wx.showToast({
-        title: "请填写问题描述",
         icon: "none",
         duration: 1000
       });

@@ -10,21 +10,20 @@ Page({
     serviceTime: "",
     serviceType: "",
     serviceSpace: "",
-    region: ["北京市", "北京市", "东城区"],
+    region: ["上海市", "上海市", "黄浦区"],
     addressTxt: "",
     contactName: "",
     contactMobile: "",
     serviceHouseDeliveryStandards: "",
     submiting: false,
-    image_url: ImgPath + "1724405397656d.png"
+    image_url: ImgPath + "1724405397656d.png",
+    showStandardList: false,
+    standardList: ["毛坯", "精装修"]
   },
   onLoad(options) {
     const date = new Date();
     const h = date.getHours();
     const m = date.getMinutes();
-    this.setData({
-      serviceTime: `${h}:${m}`
-    });
     this.getCategory();
   },
   submitOrder() {
@@ -119,5 +118,17 @@ Page({
     const data = this.data;
     data[args.detail.key] = args.detail.val;
     this.setData(data);
+  },
+  selectStandard(ev) {
+    const d = ev.currentTarget.dataset.d;
+    this.setData({
+      showStandardList: false,
+      serviceHouseDeliveryStandards: d
+    });
+  },
+  troggleList() {
+    this.setData({
+      showStandardList: !this.data.showStandardList
+    });
   }
 });

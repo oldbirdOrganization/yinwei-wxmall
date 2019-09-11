@@ -1,9 +1,12 @@
 <view class="form-item">
   <view class="form-label">选择服务时间</view>
   <view class="form-input">
-    <picker value="{{index}}" bindchange="bindValue" range="{{range}}">
-      <view class="picker">{{serviceTime || "选择服务时间"}}</view>
+    <picker mode="date" value="{{date}}" start="{{startTime}}" bindchange="bindDate">
+      <view class="picker">{{date || "选择服务时间"}}</view>
     </picker>
-    <view class="form-unit"></view>
+    <view class="split"></view>
+    <picker value="{{index}}" bindchange="bindTime" range="{{range}}">
+      <view class="picker">{{time}}</view>
+    </picker>
   </view>
 </view>

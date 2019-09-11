@@ -12,7 +12,7 @@ Page({
     serviceSpace: "",
     orderPrice: "",
     isOuterOrder: "0",
-    region: ["北京市", "北京市", "东城区"],
+    region: ["上海市", "上海市", "黄浦区"],
     ideaList: [
       { name: "方案1", src: LocalPath + "plan1.png" },
       { name: "方案2", src: LocalPath + "plan2.png" },

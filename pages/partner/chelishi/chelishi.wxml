@@ -17,7 +17,7 @@
     <contact-name bindget="setItemValue"></contact-name>
     <contact-mobile bindget="setItemValue"></contact-mobile>
     <view class="btn">
-      <button bindtap="submitOrder" disabled="{{submiting}}" class="submit-btn">立即预约</button>
+      <button bindtap="submitOrder" disabled="{{submiting}}" class="submit-btn">一键下单</button>
     </view>
   </view>
   <view class="detail">

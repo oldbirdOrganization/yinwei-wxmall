@@ -1,4 +1,3 @@
-@import "../../../static/wxss/form.wxss";
 page {
   height: 100%;
   overflow: hidden;
@@ -14,4 +13,9 @@ page {
 .form {
   padding: 42rpx 50rpx 54rpx;
   font-size: 26rpx;
+}
+@import "../../../static/wxss/form.wxss";
+
+.select-list {
+  margin-left: 0px;
 }

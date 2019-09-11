@@ -30,3 +30,6 @@ page {
   padding-top: 20rpx;
   display: flex;
 }
+.select-list {
+  margin-left: 0px;
+}

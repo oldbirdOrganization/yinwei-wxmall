@@ -1,12 +1,14 @@
 const submitOrder = require("../../../services/submitOrder.js");
 const ImgPath = require("../../../config/picPath");
+const util = require("../../../utils/util.js");
+const api = require("../../../config/api.js");
 Page({
   data: {
     channelId: "6",
     serviceHouseName: "",
     serviceTime: "",
     serviceType: "",
-    region: ["北京市", "北京市", "东城区"],
+    region: ["上海市", "上海市", "黄浦区"],
     ideaList: ["清洗", "维修", "保养"],
     serviceIdea: "",
     addressTxt: "",
@@ -18,17 +20,18 @@ Page({
     isOuterOrder: "0",
     showIdeaList: false,
     submiting: false,
-    image_url: ImgPath + "171719783bea52.png"
+    image_url: ImgPath + "171719783bea52.png",
+    brandList: [],
+    showBrandList: false
   },
   onLoad(options) {
     const date = new Date();
     const h = date.getHours();
     const m = date.getMinutes();
-    this.setData({
-      serviceTime: `${h}:${m}`
-    });
+    this.getBrands();
   },
   submitOrder() {
+    console.log(this.data.serviceTime);
     if (!this.data.serviceIdea) {
       wx.showToast({
         title: "请选择服务",
@@ -61,14 +64,6 @@ Page({
       });
       return;
     }
-    if (!this.data.problemDescription) {
-      wx.showToast({
-        title: "请填写情况说明",
-        icon: "none",
-        duration: 1000
-      });
-      return;
-    }
     if (!this.data.contactName) {
       wx.showToast({
         title: "请填写联系人",
@@ -80,14 +75,6 @@ Page({
     if (!this.data.contactMobile) {
       wx.showToast({
         title: "请填写联系电话",
-        icon: "none",
-        duration: 1000
-      });
-      return;
-    }
-    if (!this.data.problemDescription) {
-      wx.showToast({
-        title: "请填写情况说明",
         icon: "none",
         duration: 1000
       });
@@ -125,5 +112,30 @@ Page({
     const data = this.data;
     data[args.detail.key] = args.detail.val;
     this.setData(data);
+  },
+  troggleList() {
+    this.setData({
+      showBrandList: !this.data.showBrandList
+    });
+  },
+  selectBrand(ev) {
+    const d = ev.currentTarget.dataset.d;
+    this.setData({
+      showBrandList: false,
+      serviceAirConditionerModel: d
+    });
+  },
+  getBrands() {
+    util.request(api.BrandList, { isOuterBrand: 2 }).then(res => {
+      if (res.errno === 0) {
+        const brandList = res.data.data.map(val => {
+          return val.name;
+        });
+        this.setData({
+          brandList,
+          serviceAirConditionerModel: brandList[0]
+        });
+      }
+    });
   }
 });
