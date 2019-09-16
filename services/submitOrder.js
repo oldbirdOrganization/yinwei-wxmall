@@ -8,7 +8,7 @@ function submitOrder(data, needPay) {
   let params = {
     channelId: +data.channelId,
     goodsId: +data.goodsId || "",
-    orderType: ["4"].indexOf(data.channelId) === -1 ? 1 : 2,
+    orderType: 1,
     orderPrice: data.orderPrice || "",
     serviceHouseName: data.serviceHouseName || "",
     serviceTime: data.serviceTime || "",

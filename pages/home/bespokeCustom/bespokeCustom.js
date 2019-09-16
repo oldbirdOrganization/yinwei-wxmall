@@ -6,11 +6,9 @@ const LocalPath = "../../static/images/index/";
 Page({
   data: {
     channelId: "4",
-    goodsId: "",
     serviceHouseName: "",
     serviceType: "",
     serviceSpace: "",
-    orderPrice: "",
     isOuterOrder: "0",
     region: ["上海市", "上海市", "黄浦区"],
     ideaList: [
@@ -26,10 +24,6 @@ Page({
     image_url: ImgPath + "171750296d0fca.png"
   },
   onLoad(options) {
-    this.setData({
-      goodsId: options.id,
-      orderPrice: options.price
-    });
     this.getCategory();
   },
   submitOrder() {
@@ -87,7 +81,7 @@ Page({
     this.setData({
       submiting: true
     });
-    submitOrder(this.data, true).then(() => {
+    submitOrder(this.data).then(() => {
       this.setData({
         submiting: false
       });

@@ -31,7 +31,7 @@ Page({
         name: "设计"
       },
       {
-        url: "/pages/home/category/category?type=4",
+        url: "/pages/home/bespokeCustom/bespokeCustom?type=4",
         icon_url: ImgPath + "channel4.png",
         name: "定制化加配"
       },
