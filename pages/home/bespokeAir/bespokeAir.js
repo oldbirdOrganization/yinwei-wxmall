@@ -31,6 +31,7 @@ Page({
     const h = date.getHours();
     const m = date.getMinutes();
     this.getBrands();
+
   },
   submitOrder() {
     if (this.data.submiting) {
