@@ -33,13 +33,7 @@ Page({
     imgVoList: []
   },
   onPullDownRefresh() {},
-  onLoad: function(options) {
-    this.data.goodsId = options.id;
-    this.data.orderPrice = options.price;
-    const date = new Date();
-    const h = date.getHours();
-    const m = date.getMinutes();
-  },
+  onLoad: function(options) {},
   submitOrder() {
     if (!this.data.contactName) {
       wx.showToast({
@@ -65,7 +59,7 @@ Page({
       });
       return;
     }
-    submitOrder(this.data, true);
+    submitOrder(this.data);
   },
   setItemValue(args) {
     const data = this.data;

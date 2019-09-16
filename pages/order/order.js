@@ -25,9 +25,20 @@ Page({
     this.setData({
       type: +options.type
     });
-    this.getDesignate();
-    this.getConfirm();
-    this.getPayment();
+    switch (+options.type) {
+      case 1:
+        this.getDesignate();
+        break;
+      case 2:
+        this.getConfirm();
+        break;
+      case 3:
+        this.getPayment();
+        break;
+      case 4:
+        this.getFinish();
+        break;
+    }
   },
   cancelOrder(ev) {
     const index = +ev.currentTarget.dataset.d;

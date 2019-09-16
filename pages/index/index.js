@@ -14,7 +14,7 @@ Page({
     banner: [],
     channel: [
       {
-        url: "/pages/home/category/category?type=1",
+        url: "/pages/home/reportFix/reportFix",
         icon_url: ImgPath + "channel1.png",
         name: "维修",
         login: true

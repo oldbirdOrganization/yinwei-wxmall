@@ -15,14 +15,16 @@ Page({
     contactName: "",
     contactMobile: "",
     serviceAirConditionerModel: "",
-    serviceAirConditionerType: "",
+    serviceAirConditionerType: "类型一",
     problemDescription: "",
     isOuterOrder: "0",
     showIdeaList: false,
     submiting: false,
     image_url: ImgPath + "171719783bea52.png",
     brandList: [],
-    showBrandList: false
+    showBrandList: false,
+    typeList: ["类型一", "类型二", "类型三"],
+    showTypeList: false
   },
   onLoad(options) {
     const date = new Date();
@@ -31,7 +33,9 @@ Page({
     this.getBrands();
   },
   submitOrder() {
-    console.log(this.data.serviceTime);
+    if (this.data.submiting) {
+      return;
+    }
     if (!this.data.serviceIdea) {
       wx.showToast({
         title: "请选择服务",
@@ -88,9 +92,16 @@ Page({
       });
       return;
     }
-    submitOrder(this.data);
+    this.setData({
+      submiting: true
+    });
+    submitOrder(this.data).then(() => {
+      this.setData({
+        submiting: false
+      });
+    });
   },
-  troggleList() {
+  troggleIdeaList() {
     this.setData({
       showIdeaList: !this.data.showIdeaList
     });
@@ -116,6 +127,18 @@ Page({
   troggleList() {
     this.setData({
       showBrandList: !this.data.showBrandList
+    });
+  },
+  troggleTypeList() {
+    this.setData({
+      showTypeList: !this.data.showTypeList
+    });
+  },
+  selectTypes(ev) {
+    const d = ev.currentTarget.dataset.d;
+    this.setData({
+      showTypeList: false,
+      serviceAirConditionerType: d
     });
   },
   selectBrand(ev) {

@@ -39,5 +39,5 @@
     <form-region bindget="setItemValue"></form-region>
     <detail-address bindget="setItemValue"></detail-address>
   </view>
-  <bespoke-btn bindtap="submitOrder" submiting="{{submiting}}"></bespoke-btn>
+  <bespoke-btn bindtap="submitOrder" submiting="{{submiting}}" btnTxt="一键下单"></bespoke-btn>
 </scroll-view>

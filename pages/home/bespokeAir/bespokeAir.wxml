@@ -4,7 +4,7 @@
     <view class="form-item">
       <view class="form-label">选择服务</view>
       <view class="select">
-        <view class="form-input" bindtap="troggleList">
+        <view class="form-input" bindtap="troggleIdeaList">
           <view class="form-input-txt">{{serviceIdea || "点击选择服务"}}</view>
           <image class="arrow-icon" src="../../../static/images/icon/arrow.png" />
         </view>
@@ -34,9 +34,17 @@
     </view>
     <view class="form-item">
       <view class="form-label">类型</view>
-      <view class="form-input">
-        <input class="form-input-txt" value="{{serviceAirConditionerType}}" data-d="serviceAirConditionerType" bindinput="inputVlaue" placeholder="请输入类型" />
-        <view class="form-unit"></view>
+      <view class="">
+        <view class="form-input" bindtap="troggleTypeList">
+          <view class="form-input-txt">{{serviceAirConditionerType || "点击选择类型"}}</view>
+          <image class="arrow-icon" src="../../../static/images/icon/arrow.png" />
+        </view>
+        <view class="select-list" wx:if="{{showTypeList}}">
+          <view class="select-item" wx:for="{{typeList}}" wx:key="{{item.key}}" data-d="{{item}}" bindtap="selectTypes">
+            <view class="select-icon {{item === serviceAirConditionerType || (!serviceAirConditionerType && index === 0) ? 'active' : ''}}"></view>
+            <view class="select-item-txt">{{item}}</view>
+          </view>
+        </view>
       </view>
     </view>
     <view class="form-item">
@@ -51,5 +59,5 @@
     <form-region bindget="setItemValue"></form-region>
     <detail-address bindget="setItemValue"></detail-address>
   </view>
-  <bespoke-btn bindtap="submitOrder" submiting="{{submiting}}"></bespoke-btn>
+  <bespoke-btn bindtap="submitOrder" submiting="{{submiting}}" btnTxt="一键下单"></bespoke-btn>
 </scroll-view>
