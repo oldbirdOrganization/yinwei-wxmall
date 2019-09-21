@@ -80,7 +80,9 @@ Page({
     });
     util.request(api.TopicCase).then(res => {
       if (res.errno === 0) {
-        const topics = res.data.topicList;
+        const topics = res.data.topicList.filter((val, i) => {
+          return i < 2;
+        });
         this.setData({ topics, caseList: res.data.topicList });
       }
     });

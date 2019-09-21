@@ -116,7 +116,11 @@ Page({
     this.setData({
       submiting: true
     });
-    submitOrder(this.data, true, this.openModal);
+    submitOrder(this.data, true, this.openModal).then(() => {
+      this.setData({
+        submiting: false
+      });
+    });
   },
   changeType: function(ev) {
     const i = ev.currentTarget.dataset.index;

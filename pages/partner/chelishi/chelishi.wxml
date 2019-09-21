@@ -51,7 +51,7 @@
     <view class="modal-tag">支付详情</view>
     <view class="slip">
       <view class="fee-name">应付定金金额</view>
-      <view class="price">￥0</view>
+      <view class="price">￥{{info.orderPrice}}</view>
     </view>
     <view class="modal-bottom">
       <view class="modal-total">
