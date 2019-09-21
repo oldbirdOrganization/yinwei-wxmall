@@ -4,11 +4,11 @@ const api = require("../config/api.js");
 const login = require("../services/login.js");
 const pay = require("../services/pay.js");
 
-function submitOrder(data, needPay) {
+function submitOrder(data, needPay, fn) {
   let params = {
     channelId: +data.channelId,
     goodsId: +data.goodsId || "",
-    orderType: 1,
+    orderType: +data.channelId !== 1 ? 1 : 2,
     orderPrice: data.orderPrice || "",
     serviceHouseName: data.serviceHouseName || "",
     serviceTime: data.serviceTime || "",
@@ -43,9 +43,13 @@ function submitOrder(data, needPay) {
         const flag = res.errno === 0 ? 1 : 0;
         if (needPay) {
           if (flag) {
-            wx.navigateTo({
-              url: "/pages/orderDetail/orderDetail?orderNo=" + res.data
-            });
+            if (fn && typeof fn === "function") {
+              fn(res.data);
+            } else {
+              wx.navigateTo({
+                url: "/pages/orderDetail/orderDetail?orderNo=" + res.data
+              });
+            }
           } else {
             wx.showToast({
               title: res.errmsg,

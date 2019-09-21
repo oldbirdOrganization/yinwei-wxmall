@@ -1,0 +1,4 @@
+<view class="container">
+  <image class="bg-img" mode="widthFix" src="{{imgUrl}}" />
+  <view class="btn" bindtap="goPage"></view>
+</view>

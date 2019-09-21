@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "维修"
+  "navigationBarTitleText": "维修",
+  "usingComponents": {
+    "modal": "../../../component/modal/modal"
+  }
 }

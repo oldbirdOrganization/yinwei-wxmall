@@ -1,9 +1,3 @@
 <view class="container">
-  <image class="bg-img" src="{{info.avatar}}" />
-  <view class="list">
-    <view class="item">
-      <image class="item-img" src="{{info.item_pic_url}}" />
-      <view class="item-txt">{{info.subtitle}}</view>
-    </view>
-  </view>
+  <image class="bg-img" mode="widthFix" src="{{info.item_pic_url}}" />
 </view>

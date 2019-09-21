@@ -17,7 +17,9 @@
     <contact-name bindget="setItemValue"></contact-name>
     <contact-mobile bindget="setItemValue"></contact-mobile>
     <view class="btn">
-      <button bindtap="submitOrder" disabled="{{submiting}}" class="submit-btn">一键下单</button>
+      <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="submitOrder" disabled="{{submiting}}" class="submit-btn">
+        一键下单
+      </button>
     </view>
   </view>
   <view class="detail">
@@ -31,3 +33,33 @@
     </view>
   </view>
 </view>
+<modal show="{{showModal}}" height='60%'>
+  <view class="modal-con">
+    <view class="modal-top">
+      <view class="status">{{info.orderTypeTxt}}</view>
+      <view class="top-txt">订单编号：{{info.orderNo}}</view>
+      <view class="top-txt">下单时间：{{info.orderTime}}</view>
+    </view>
+    <view class="modal-contact">
+      <view class="modal-label">联系人： {{info.contactName}}</view>
+      <view class="modal-dd">{{info.contactMobile}}</view>
+    </view>
+    <view class="modal-tag">维修需求</view>
+    <view class="require-desc">
+      <require-item requireTxt="{{item}}" wx:for="{{info.requireList}}" wx:key="{{index}}"></require-item>
+    </view>
+    <view class="modal-tag">支付详情</view>
+    <view class="slip">
+      <view class="fee-name">应付定金金额</view>
+      <view class="price">￥0</view>
+    </view>
+    <view class="modal-bottom">
+      <view class="modal-total">
+        合计:
+        <text class="price">￥{{info.orderPrice}}</text>
+      </view>
+      <view class="modal-btn" bindtap="pay">立即支付</view>
+    </view>
+    <image src="../../../static/images/icon/close.png" class="close-icon" bindtap="closeModal" />
+  </view>
+</modal>

@@ -11,7 +11,8 @@ Component({
     attached() {
       const t = this.data.type;
       this.setData({
-        titleSrc: "../../static/images/index/card-" + t + ".png"
+        titleSrc: "../../static/images/index/card-" + t + ".png",
+        name: this.data.type === "1" ? "限时优惠" : "明星产品"
       });
       util
         .request(api.IndexFLoorGoods, { floorType: this.data.type })

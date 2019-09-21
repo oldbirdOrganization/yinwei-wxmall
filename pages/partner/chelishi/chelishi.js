@@ -1,7 +1,18 @@
 const ImgPath = require("../../../config/picPath");
 const submitOrder = require("../../../services/submitOrder.js");
+const util = require("../../../utils/util.js");
+const api = require("../../../config/api.js");
+const pay = require("../../../services/pay.js");
 //获取应用实例
 const app = getApp();
+const OrderTypeMap = {
+  1: "下单成功（待指派）",
+  2: "待确认",
+  3: "已确认",
+  4: "完成服务",
+  5: "作废",
+  6: "待评价"
+};
 Page({
   data: {
     menu: [
@@ -73,7 +84,8 @@ Page({
     isOuterOrder: "1",
     outerServiceCombo: "无赔付",
     orderPrice: 12000,
-    submiting: false
+    submiting: false,
+    showModal: true
   },
   onPullDownRefresh() {},
   onLoad: function(options) {
@@ -104,11 +116,7 @@ Page({
     this.setData({
       submiting: true
     });
-    submitOrder(this.data, true).then(() => {
-      this.setData({
-        submiting: false
-      });
-    });
+    submitOrder(this.data, true, this.openModal);
   },
   changeType: function(ev) {
     const i = ev.currentTarget.dataset.index;
@@ -136,5 +144,45 @@ Page({
     const data = this.data;
     data[args.detail.key] = args.detail.val;
     this.setData(data);
+  },
+  openModal(id) {
+    util.request(api.OrderDetail, { orderNo: id }, "GET").then(res => {
+      if (res.errno === 0) {
+        let info = res.data.order;
+        info.orderTypeTxt = OrderTypeMap[info.orderType];
+        info.orderTime = util.formatTime(new Date(info.createTime));
+        info.requireList = info.serviceRequired
+          ? info.serviceRequired.split(",")
+          : [];
+        this.setData({ info, showModal: true });
+      }
+    });
+  },
+  closeModal() {
+    this.setData({
+      showModal: false
+    });
+  },
+  //支付
+  pay() {
+    if (this.data.info.orderPrice === "0" || !this.data.info.orderPrice) return;
+    pay(this.data.orderNo)
+      .then(res => {
+        wx.showToast({
+          title: "订单支付成功",
+          icon: "success",
+          duration: 1000
+        });
+        wx.navigateTo({
+          url: "/pages/order/order"
+        });
+      })
+      .catch(() => {
+        wx.showToast({
+          title: "订单支付失败",
+          icon: "none",
+          duration: 1000
+        });
+      });
   }
 });

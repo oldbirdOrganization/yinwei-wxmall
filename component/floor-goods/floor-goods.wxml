@@ -6,7 +6,7 @@
     <view wx:if="{{list.length > 2}}" class="more-btn" bindtap="showMore">更多</view>
   </view>
   <view class="card-con">
-    <navigator class="item" wx:for="{{goodsList}}" wx:key="item.id" url="/pages/home/bespokeReform/bespokeReform?id={{item.id}}">
+    <navigator class="item" wx:for="{{goodsList}}" wx:key="item.id" url="/pages/home/spec/spec?id={{item.id}}&title={{name}}">
       <image class="item-img" src="{{item.list_pic_url}}" mode="aspectFill"></image>
       <view class="item-mt" wx:if="{{item.retail_price}}">
         <text class="price-wrap">

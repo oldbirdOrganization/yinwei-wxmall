@@ -1,3 +1,4 @@
+@import "../../../static/wxss/modal.wxss";
 .container {
   padding: 18rpx 28rpx;
   border-top: 1rpx solid #bfbfbf;
@@ -64,4 +65,23 @@
   height: 24rpx;
   margin-top: 78rpx;
   margin-left: 10rpx;
+}
+.modal-item {
+  height: 64rpx;
+  padding: 0rpx 46rpx;
+  line-height: 64rpx;
+  border-radius: 38rpx;
+  font-size: 24rpx;
+  border: 1rpx solid #c0987f;
+  color: #c0987f;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+.modal-item.active {
+  background-color: #c0987f;
+  color: #fff;
+}
+.modal-btns {
+  padding-top: 20rpx;
+  display: flex;
 }

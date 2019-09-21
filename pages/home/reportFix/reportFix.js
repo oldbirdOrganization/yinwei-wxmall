@@ -30,10 +30,25 @@ Page({
     problemDescription: "",
     serviceTime: "",
     serviceRequired: "",
-    imgVoList: []
+    imgVoList: [],
+    goodsId: ""
   },
   onPullDownRefresh() {},
-  onLoad: function(options) {},
+  onLoad: function(options) {
+    const { id, require } = options;
+    const requireList = require.split(",");
+    requireList.some(val => {
+      this.data.requirePool.some(slip => {
+        if (val === slip.txt) slip.active = true;
+      });
+    });
+    this.data.requires = requireList;
+    this.setData({
+      goodsId: id,
+      requirePool: this.data.requirePool,
+      requires: this.data.requires
+    });
+  },
   submitOrder() {
     if (!this.data.contactName) {
       wx.showToast({

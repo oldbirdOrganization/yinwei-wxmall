@@ -7,6 +7,7 @@
     "pages/orderDetail/orderDetail",
     "pages/postComment/postComment",
     "pages/goods/goods",
+    "pages/contact/contact",
 
     "pages/catalog/catalog",
     "pages/newGoods/newGoods",
@@ -50,7 +51,8 @@
         "bespokeInspect/bespokeInspect",
         "reportFix/reportFix",
         "bespokeResult/bespokeResult",
-        "case/case"
+        "case/case",
+        "spec/spec"
       ]
     },
     {
@@ -104,7 +106,7 @@
         "text": "服务报价"
       },
       {
-        "pagePath": "pages/priceServer/priceServer",
+        "pagePath": "pages/contact/contact",
         "iconPath": "static/images/index-icon4.png",
         "selectedIconPath": "static/images/index-icon4-a.png",
         "text": "客服"

@@ -23,3 +23,14 @@
     </view>
   </view>
 </view>
+<modal show="{{showModal}}" height='60%'>
+  <view class='modal-con'>
+    <view class="modal-item {{item.active ? 'active' : ''}}" bindtap="tapRequire" data-index="{{index}}" wx:for="{{requirePool}}" wx:key="{{item.key}}">
+      {{item.txt}}
+    </view>
+    <view class="modal-btns">
+      <button class="modal-btn" bindtap="closeModal">取消</button>
+      <button class="modal-btn" bindtap="selectRequire">确定</button>
+    </view>
+  </view>
+</modal>

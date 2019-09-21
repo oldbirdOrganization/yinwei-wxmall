@@ -14,7 +14,7 @@ Page({
     banner: [],
     channel: [
       {
-        url: "/pages/home/reportFix/reportFix",
+        url: "/pages/home/category/category?type=1",
         icon_url: ImgPath + "channel1.png",
         name: "维修",
         login: true
@@ -80,9 +80,7 @@ Page({
     });
     util.request(api.TopicCase).then(res => {
       if (res.errno === 0) {
-        const topics = res.data.topicList.filter((val, i) => {
-          return i < 2;
-        });
+        const topics = res.data.topicList;
         this.setData({ topics, caseList: res.data.topicList });
       }
     });

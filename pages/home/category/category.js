@@ -9,7 +9,14 @@ Page({
     banner: [],
     menu: [],
     list: [],
-    activeIndex: 0
+    activeIndex: 0,
+    requirePool: [
+      { txt: "涂料色差、流坠、破损", active: false },
+      { txt: "不平整", active: false },
+      { txt: "开裂", active: false },
+      { txt: "空鼓", active: false }
+    ],
+    showModal: false
   },
   onPullDownRefresh() {},
   onLoad: function(options) {
@@ -58,16 +65,34 @@ Page({
   goDetailPage(ev) {
     login().then(() => {
       const { id, price } = ev.currentTarget.dataset;
-      const toUrl =
-        this.channelId === "1"
-          ? "/pages/home/reportFix/reportFix?id=" + id + "&price=" + price
-          : "/pages/home/bespokeCustom/bespokeCustom?id=" +
-            id +
-            "&price=" +
-            price;
-      wx.navigateTo({
-        url: toUrl
+      if (this.channelId === "1") {
+        this.toUrl = "/pages/home/reportFix/reportFix?id=" + id;
+      }
+      this.setData({
+        showModal: true
       });
+    });
+  },
+  tapRequire(ev) {
+    const index = ev.currentTarget.dataset.index;
+    const requirePool = this.data.requirePool;
+    requirePool[index].active = !requirePool[index].active;
+    this.setData({
+      requirePool
+    });
+  },
+  closeModal() {
+    this.setData({ showModal: false });
+  },
+  selectRequire() {
+    const requires = [];
+    this.data.requirePool.some(val => {
+      val.active && requires.push(val.txt);
+    });
+    this.closeModal();
+    const serviceRequired = requires.join(",");
+    wx.navigateTo({
+      url: this.toUrl + "&require=" + serviceRequired
     });
   }
 });
