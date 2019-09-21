@@ -85,7 +85,7 @@ Page({
     outerServiceCombo: "无赔付",
     orderPrice: 12000,
     submiting: false,
-    showModal: true
+    showModal: false
   },
   onPullDownRefresh() {},
   onLoad: function(options) {
