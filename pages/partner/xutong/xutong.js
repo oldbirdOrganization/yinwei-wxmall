@@ -80,7 +80,7 @@ Page({
     this.setData({
       submiting: true
     });
-    submitOrder(this.data, true).then(() => {
+    submitOrder(this.data, false).then(() => {
       this.setData({
         submiting: false
       });
