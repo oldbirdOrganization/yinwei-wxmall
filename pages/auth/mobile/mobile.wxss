@@ -37,6 +37,7 @@ page {
   text-align: center;
   border-radius: 30rpx;
   font-size: 24rpx;
+  line-height: 62rpx;
 }
 .input {
   width: 434rpx;

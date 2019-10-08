@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 30,
+			"current": 31,
 			"list": [
 				{
 					"id": 0,
@@ -247,6 +247,12 @@
 					"name": "转场",
 					"pathName": "pages/home/spec/spec",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户反馈",
+					"pathName": "pages/ucenter/feedback/feedback",
 					"scene": null
 				}
 			]
