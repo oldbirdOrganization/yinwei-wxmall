@@ -90,14 +90,14 @@
 				},
 				{
 					"id": -1,
-					"name": "红包中心",
+					"name": "优惠券中心",
 					"pathName": "pages/client/coupon/coupon",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": 9,
-					"name": "我的红包",
+					"name": "我的优惠券",
 					"pathName": "pages/client/myCoupon/myCoupon",
 					"query": "",
 					"scene": null
