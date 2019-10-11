@@ -2,9 +2,9 @@ var util = require("../../../utils/util.js");
 var api = require("../../../config/api.js");
 
 var app = getApp();
-
 Page({
   data: {
+<<<<<<< HEAD
     array: [
       "请选择反馈类型",
       "商品相关",
@@ -15,6 +15,9 @@ Page({
       "产品建议",
       "其他"
     ],
+=======
+    array: ['请选择反馈类型', '产品相关', '服务态度', '优惠活动', '其他'],
+>>>>>>> 1f410b4d3d101671dee2173fb6e853d41bdfa381
     index: 0,
     content: "",
     contentLength: 0,

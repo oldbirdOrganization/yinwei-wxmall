@@ -4,6 +4,6 @@
   </view>
   <coupon-empty wx:else emptyTxt="暂无优惠券"></coupon-empty>
   <button class="my-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
-    我的红包
+    我的优惠券
   </button>
 </view>
