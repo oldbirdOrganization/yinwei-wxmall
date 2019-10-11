@@ -4,16 +4,7 @@ var api = require("../../../config/api.js");
 var app = getApp();
 Page({
   data: {
-    array: [
-      "请选择反馈类型",
-      "商品相关",
-      "物流状况",
-      "客户服务",
-      "优惠活动",
-      "功能异常",
-      "产品建议",
-      "其他"
-    ],
+    array: ["产品相关", "服务态度", "优惠活动", "其他"],
     index: 0,
     content: "",
     contentLength: 0,

@@ -75,6 +75,9 @@ Page({
       });
       return;
     }
+    this.setData({
+      serviceRequired: this.data.requires.join(",")
+    });
     submitOrder(this.data);
   },
   setItemValue(args) {

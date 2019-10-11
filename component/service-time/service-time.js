@@ -31,7 +31,7 @@ Component({
       this.setData({
         index,
         date: y + "-" + toTwo(m) + "-" + toTwo(d),
-        time: this.data.range[index + 1],
+        time: this.data.range[(index + 1) % 12],
         startTime: y + "-" + toTwo(m) + "-" + toTwo(d)
       });
       function toTwo(n) {
