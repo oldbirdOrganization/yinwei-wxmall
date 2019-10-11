@@ -25,20 +25,24 @@ Page({
     this.setData({
       type: +options.type
     });
-    switch (+options.type) {
-      case 1:
-        this.getDesignate();
-        break;
-      case 2:
-        this.getConfirm();
-        break;
-      case 3:
-        this.getPayment();
-        break;
-      case 4:
-        this.getFinish();
-        break;
-    }
+    this.getDesignate();
+    this.getConfirm();
+    this.getPayment();
+    this.getFinish();
+    // switch (+options.type) {
+    //   case 1:
+    //     this.getDesignate();
+    //     break;
+    //   case 2:
+    //     this.getConfirm();
+    //     break;
+    //   case 3:
+    //     this.getPayment();
+    //     break;
+    //   case 4:
+    //     this.getFinish();
+    //     break;
+    // }
   },
   cancelOrder(ev) {
     const index = +ev.currentTarget.dataset.d;
@@ -117,11 +121,17 @@ Page({
             : [];
         });
         this.data.typeList[0].remain = list.length;
-        this.setData({
-          designateList: list,
-          list,
-          typeList: this.data.typeList
-        });
+        if (this.data.type === 1) {
+          this.setData({
+            designateList: list,
+            list,
+            typeList: this.data.typeList
+          });
+        } else {
+          this.setData({
+            typeList: this.data.typeList
+          });
+        }
       }
     });
   },
@@ -136,7 +146,17 @@ Page({
             : [];
         });
         this.data.typeList[1].remain = list.length;
-        this.setData({ confirmList: list, list, typeList: this.data.typeList });
+        if (this.data.type === 2) {
+          this.setData({
+            confirmList: list,
+            list,
+            typeList: this.data.typeList
+          });
+        } else {
+          this.setData({
+            typeList: this.data.typeList
+          });
+        }
       }
     });
   },
@@ -151,7 +171,17 @@ Page({
             : [];
         });
         this.data.typeList[2].remain = list.length;
-        this.setData({ paymentList: list, list, typeList: this.data.typeList });
+        if (this.data.type === 3) {
+          this.setData({
+            paymentList: list,
+            list,
+            typeList: this.data.typeList
+          });
+        } else {
+          this.setData({
+            typeList: this.data.typeList
+          });
+        }
       }
     });
   },
@@ -165,7 +195,9 @@ Page({
             ? val.serviceRequired.split(",")
             : [];
         });
-        this.setData({ finishList: list, list });
+        if (this.data.type === 4) {
+          this.setData({ finishList: list, list });
+        }
       }
     });
   },

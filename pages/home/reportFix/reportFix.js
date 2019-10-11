@@ -26,7 +26,8 @@ Page({
     imgLen: 0,
     showModal: false,
     contactName: "",
-    address: "",
+    region: ["上海市", "上海市", "黄浦区"],
+    addressTxt: "",
     problemDescription: "",
     serviceTime: "",
     serviceRequired: "",
@@ -58,7 +59,7 @@ Page({
       });
       return;
     }
-    if (!this.data.address) {
+    if (!this.data.addressTxt) {
       wx.showToast({
         title: "请填写地址",
         icon: "none",
@@ -80,11 +81,6 @@ Page({
     const data = this.data;
     data[args.detail.key] = args.detail.val;
     this.setData(data);
-  },
-  inputAddress(ev) {
-    this.setData({
-      address: ev.detail.value
-    });
   },
   inputDescription(ev) {
     this.setData({

@@ -1,13 +1,8 @@
 <view class="container">
   <view class="form">
     <contact-name bindget="setItemValue"></contact-name>
-    <view class="item">
-      <view class="label">服务地址</view>
-      <view class="input">
-        <input class="input-txt" value="{{address}}" bindinput="inputAddress" placeholder="请选择服务地址" />
-        <view class="unit"></view>
-      </view>
-    </view>
+    <form-region bindget="setItemValue"></form-region>
+    <detail-address bindget="setItemValue"></detail-address>
     <service-time bindget="setItemValue"></service-time>
     <view class="item">
       <view class="label">维修需求</view>

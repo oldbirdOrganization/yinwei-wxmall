@@ -6,6 +6,8 @@
     "modal": "../../../component/modal/modal",
     "require-item": "../../../component/require-item/require-item",
     "contact-name": "../../../component/contact-name/contact-name",
-    "service-time": "../../../component/service-time/service-time"
+    "service-time": "../../../component/service-time/service-time",
+    "form-region": "../../../component/form-region/form-region",
+    "detail-address": "../../../component/detail-address/detail-address"
   }
 }
