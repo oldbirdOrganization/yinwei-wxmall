@@ -158,7 +158,7 @@ Page({
         info.requireList = info.serviceRequired
           ? info.serviceRequired.split(",")
           : [];
-        this.setData({ info, showModal: true });
+        this.setData({ info, showModal: true, orderNo: id });
       }
     });
   },
