@@ -7,7 +7,7 @@ Page({
     channelId: "1",
     requires: [],
     requirePool: [
-      { txt: "涂料色差、流坠、破损", active: false },
+      { txt: "涂料色差、流坠、破损", active: true },
       { txt: "不平整", active: false },
       { txt: "开裂", active: false },
       { txt: "空鼓", active: false }
