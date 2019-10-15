@@ -32,9 +32,9 @@ function submitOrder(data, needPay, fn) {
     orderPrice: data.orderPrice || "",
     outerServiceBrand: data.outerServiceBrand || ""
   };
-  if (data.region) {
-    params.address = data.region.join("") + data.addressTxt;
-  }
+  // if (data.region) {
+  //   params.address = data.region.join("") + data.addressTxt;
+  // }
   if (data.address) params.address = data.address;
   return new Promise((resove, reject) => {
     util

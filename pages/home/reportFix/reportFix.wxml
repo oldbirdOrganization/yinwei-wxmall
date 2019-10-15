@@ -1,8 +1,16 @@
 <view class="container">
   <view class="form">
     <contact-name bindget="setItemValue"></contact-name>
-    <form-region bindget="setItemValue"></form-region>
-    <detail-address bindget="setItemValue"></detail-address>
+    <!--<form-region bindget="setItemValue"></form-region>-->
+    <view class="item">
+      <view class="label">服务地址</view>
+      <view class="input" >
+        <view class="input" wx:if="{{address.length}}" data-url="/pages/client/address/address" bindtap="goPage">{{address}}</view>
+        <view class="input-txt" wx:if="{{!address.length}}" data-url="/pages/client/address/address" bindtap="goPage">请选择服务地址</view>
+      </view>
+      <view></view>
+    </view>
+    <!--<detail-address bindget="setItemValue"></detail-address>-->
     <service-time bindget="setItemValue"></service-time>
     <view class="item">
       <view class="label">维修需求</view>

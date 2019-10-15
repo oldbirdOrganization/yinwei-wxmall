@@ -33,10 +33,6 @@ Page({
   },
   sbmitFeedback: function(e) {
     let that = this;
-    if (that.data.index == 0) {
-      util.showErrorToast("请选择反馈类型");
-      return false;
-    }
 
     if (that.data.content == "") {
       util.showErrorToast("请输入反馈内容");

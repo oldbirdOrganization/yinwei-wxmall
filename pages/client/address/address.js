@@ -29,5 +29,14 @@ Page({
     wx.navigateTo({
       url: "/pages/client/addAdress/addAdress"
     });
+  },
+  selectAddress(e) {
+    wx.setStorage({
+      key: "selectAddress",
+      data: e.currentTarget.dataset.address,
+      success: function () {
+        wx.navigateBack();   //返回上一个页面
+      }
+    })
   }
 });

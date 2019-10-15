@@ -1,7 +1,7 @@
 <view class="container">
   <view class="slipt"></view>
   <view class="address-list" wx:if="{{ addressList.length > 0 }}">
-    <view class="item" wx:for="{{addressList}}" wx:key="{{item.id}}" bindtap="selectAddress" data-address-id="{{item.id}}">
+    <view class="item" wx:for="{{addressList}}" wx:key="{{item.id}}" bindtap="selectAddress" data-address-id="{{item.id}}" data-address="{{item.address}}">
       <view class="l">
         <view class="name">{{item.contactName}}</view>
         <view class="default" wx:if="{{item.isDefault}}">默认</view>

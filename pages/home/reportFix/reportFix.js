@@ -1,5 +1,6 @@
 const submitOrder = require("../../../services/submitOrder.js");
 const api = require("../../../config/api.js");
+const util = require("../../../utils/util.js");
 //获取应用实例
 const app = getApp();
 Page({
@@ -27,6 +28,7 @@ Page({
     showModal: false,
     contactName: "",
     region: ["上海市", "上海市", "黄浦区"],
+    address: "",
     addressTxt: "",
     problemDescription: "",
     serviceTime: "",
@@ -43,12 +45,20 @@ Page({
         if (val === slip.txt) slip.active = true;
       });
     });
-    this.data.requires = requireList;
+    if (requireList.length && requireList[0].length){
+      this.data.requires = requireList;
+    }
     this.setData({
       goodsId: id,
       requirePool: this.data.requirePool,
       requires: this.data.requires
     });
+  },
+  onShow() {
+    if(wx.getStorageSync('selectAddress')){
+      this.setData({ address: wx.getStorageSync('selectAddress') })
+      wx.removeStorageSync('selectAddress')
+    }
   },
   submitOrder() {
     if (!this.data.contactName) {
@@ -59,9 +69,9 @@ Page({
       });
       return;
     }
-    if (!this.data.addressTxt) {
+    if (!this.data.address) {
       wx.showToast({
-        title: "请填写地址",
+        title: "请选择服务地址",
         icon: "none",
         duration: 1000
       });
@@ -184,5 +194,27 @@ Page({
     this.closeModal();
     const serviceRequired = requires.join(",");
     this.setData({ requires, serviceRequired });
+  },
+  goPage: function (ev) {
+    const toUrl = ev.currentTarget.dataset.url;
+    if (!toUrl) return;
+    wx.navigateTo({
+      url: toUrl
+    });
+  },
+  getAddress() {
+    let that = this;
+    util.request(api.AddressList, {}, "GET").then(function (res) {
+      console.log(res)
+      if (res.errno === 0 && res.data.length) {
+        var addressList = res.data
+        for (var i = 0; i < addressList.length; i++){
+          if (addressList[i].isDefault){
+            that.setData({ address: addressList[i].address})
+            break
+          }
+        }
+      }
+    });
   }
 });

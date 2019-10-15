@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "优惠券中心",
+  "navigationBarTitleText": "我的优惠券",
   "usingComponents": {
     "coupon-item": "../../../component/coupon-item/coupon-item",
     "coupon-empty": "../../../component/coupon-empty/coupon-empty"
