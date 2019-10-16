@@ -19,7 +19,9 @@ Page({
     });
   },
   getInfo() {
-    util.request(api.UserInfo, {}, "GET").then(res => {
+    var openId = wx.getStorageSync('token')
+    util.request(api.UserInfo+"?openId="+openId, {}, "GET").then(res => {
+      console.log(res);
       if (res.errno === 0) {
         console.log(res);
       }
