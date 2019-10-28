@@ -36,9 +36,11 @@ function login_wx(resolve) {
               .then(res => {
                 if (res.errno === 0) {
                   //存储用户信息
+                  console.log(res);
                   wx.setStorageSync("userInfo", res.data.userInfo);
                   wx.setStorageSync("token", res.data.token);
                   wx.setStorageSync("userId", res.data.userId);
+                  wx.setStorageSync("openId", res.data.openId);
                   resolve(res.data.userInfo);
                 } else {
                   wx.showModal({

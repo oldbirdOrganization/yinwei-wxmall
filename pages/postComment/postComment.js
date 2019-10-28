@@ -22,30 +22,33 @@ Page({
     this.setData(this.data);
   },
   postComment() {
-    let qualityEvaluateLevel = 0;
-    let serviceEvaluateLevel = 0;
+    let qualityLevel = 0;
+    let serviceLevel = 0;
     this.data.qList.some(val => {
-      qualityEvaluateLevel += val;
+      qualityLevel += val;
     });
     this.data.sList.some(val => {
-      serviceEvaluateLevel += val;
+      serviceLevel += val;
     });
+    console.log(this.orderNo)
     util
       .request(api.CommentPost, {
         content: this.data.content,
-        qualityEvaluateLevel,
-        serviceEvaluateLevel,
-        typeId: 1,
-        valueId: this.orderNo
-      })
+        qualityEvaluateLevel: qualityLevel,
+        serviceEvaluateLevel: serviceLevel,
+        typeId: "1",
+        valueId: this.orderNo,
+        imagesList: []
+      }, "POST", "application/json")
       .then(res => {
+        console.log(res)
         if (res.errno == 0) {
+          wx.navigateBack();
           wx.showToast({
             title: "评论成功",
             icon: "success",
             duration: 1000
           });
-          wx.navigateBack();
         } else {
           wx.showToast({
             title: "评论失败",

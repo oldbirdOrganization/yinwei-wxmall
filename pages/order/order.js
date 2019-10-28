@@ -195,8 +195,18 @@ Page({
             ? val.serviceRequired.split(",")
             : [];
         });
+        console.log(res.data)
+        this.data.typeList[3].remain = list.length;
         if (this.data.type === 4) {
-          this.setData({ finishList: list, list });
+          this.setData({
+            paymentList: list,
+            list,
+            typeList: this.data.typeList
+          });
+        } else {
+          this.setData({
+            typeList: this.data.typeList
+          });
         }
       }
     });

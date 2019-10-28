@@ -50,8 +50,11 @@
         立即付款
       </button>
       <!-- 已完成 -->
-      <button wx:if="{{type === 4}}" class="btn-pry btn" data-url="/pages/postComment/postComment?orderNo={{item.orderNo}}" bindtap="goPage">
+      <button wx:if="{{type === 4 && item.orderStatus === 3}}" class="btn-pry btn" data-url="/pages/postComment/postComment?orderNo={{item.orderNo}}" bindtap="goPage">
         服务评价
+      </button>
+      <button wx:if="{{type === 4 && item.orderStatus === 5}}" class="btn-pry btn" data-url="/pages/postComment/postComment?orderNo={{item.orderNo}}" bindtap="goPage">
+        再次评价
       </button>
     </view>
   </block>
