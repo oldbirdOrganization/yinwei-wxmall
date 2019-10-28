@@ -82,5 +82,8 @@ module.exports = {
   OrderQuery: API_BASE_URL + "pay/query", //微信查询订单状态
 
   HelpTypeList: API_BASE_URL + "helpissue/typeList", //查看帮助类型列表
-  HelpIssueList: API_BASE_URL + "helpissue/issueList" //查看问题列表
+  HelpIssueList: API_BASE_URL + "helpissue/issueList", //查看问题列表
+
+  CaseDetail: API_BASE_URL + "setcase/detail", //查看问题列表
+  CaseList: API_BASE_URL + "setcase/list" //查看问题列表
 };

@@ -7,11 +7,15 @@
     </view>
   </view>
   <view class="plan-list" wx:if="{{showList}}">
-    <view class="plan" wx:for="{{list}}" wx:key="{{item.key}}" data-d="{{item.name}}" bindtap="selectType">
-      <image src="{{item.src}}" class="plan-img" />
-      <view class="plan-btn {{item.name === serviceIdea || (!serviceIdea && index === 0) ? 'active' : ''}}">
-        {{item.name}}
+    <view class="plan" wx:for="{{ideaList}}" wx:key="{{item.key}}" data-d="{{item.title}}" bindtap="selectType">
+      <view class="select-item">
+        <view class="select-icon {{item.title === serviceIdea || (!serviceIdea && index === 0) ? 'active' : ''}}"></view>
+        <view class="select-item-txt">{{item.title}}</view>
       </view>
+      <view class="plan-content">
+        "{{item.content}}"
+      </view>
+      <image src="{{item.casePicUrl}}" class="plan-img" mode="aspectFill"/>
     </view>
   </view>
 </view>

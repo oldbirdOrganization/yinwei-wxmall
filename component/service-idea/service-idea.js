@@ -1,11 +1,7 @@
 Component({
-  properties: {
-    list: {
-      type: Array,
-      value: []
-    }
-  },
+  properties: {},
   data: {
+    ideaList: wx.getStorageSync("caseList"),
     showList: false,
     serviceIdea: ""
   },

@@ -25,6 +25,7 @@ Page({
   },
   onLoad(options) {
     this.getCategory();
+    this.getCaseList();
   },
   submitOrder() {
     if (this.data.submiting) {
@@ -88,6 +89,33 @@ Page({
     });
   },
   getCategory() {
+    let categoryList = wx.getStorageSync("categoryList");
+    if (categoryList && categoryList.length) return;
+
+    util.request(api.CategoryList, {}, "GET").then(res => {
+      if (res.errno === 0) {
+        wx.setStorage({
+          key: "categoryList",
+          data: res.data.categoryList
+        });
+      }
+    });
+  },
+  getCaseList() {
+    let categoryList = wx.getStorageSync("caseList");
+    if (categoryList && categoryList.length) return;
+
+    util.request(api.CaseList, {}, "POST").then(res => {
+      if (res.errno === 0) {
+        console.log(res.data)
+        wx.setStorage({
+          key: "caseList",
+          data: res.data.data
+        });
+      }
+    });
+  },
+  getCaseDetail() {
     let categoryList = wx.getStorageSync("categoryList");
     if (categoryList && categoryList.length) return;
 

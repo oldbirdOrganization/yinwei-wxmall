@@ -4,7 +4,7 @@
     <service-house bindget="setItemValue"></service-house>
     <detail-address bindget="setItemValue"></detail-address>
     <service-space bindget="setItemValue"></service-space>
-    <service-idea bindget="setItemValue" list="{{ideaList}}"></service-idea>
+    <service-idea bindget="setItemValue"></service-idea>
     <contact-name bindget="setItemValue"></contact-name>
     <contact-mobile bindget="setItemValue"></contact-mobile>
   </view>

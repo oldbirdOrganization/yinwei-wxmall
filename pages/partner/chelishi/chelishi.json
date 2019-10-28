@@ -6,6 +6,6 @@
     "contact-name": "../../../component/contact-name/contact-name",
     "contact-mobile": "../../../component/contact-mobile/contact-mobile",
     "modal": "../../../component/modal/modal",
-    "require-item": "../../component/require-item/require-item"
+    "require-item": "../../../component/require-item/require-item"
   }
 }
