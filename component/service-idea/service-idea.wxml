@@ -13,7 +13,7 @@
         <view class="select-item-txt">{{item.title}}</view>
       </view>
       <view class="plan-content">
-        "{{item.content}}"
+        {{item.content}}
       </view>
       <image src="{{item.casePicUrl}}" class="plan-img" mode="aspectFill"/>
     </view>
