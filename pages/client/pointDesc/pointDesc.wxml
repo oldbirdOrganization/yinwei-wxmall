@@ -47,7 +47,7 @@
   <view class="card">
     <view class="card-top">积分兑换说明</view>
     <view class="card-con card-txt">
-      <view class="card-txt-item">1、兑换抵扣金：每10积分可抵扣1元</view>
+      <view class="card-txt-item">1、兑换一步E家抵扣金：每10积分可抵扣1元</view>
       <view class="card-txt-item">2、兑换合作服务优惠券（实时更新）</view>
     </view>
   </view>
