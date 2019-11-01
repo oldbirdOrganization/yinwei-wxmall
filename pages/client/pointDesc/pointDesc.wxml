@@ -3,7 +3,7 @@
   <view class="title">会员积分使用说明</view>
   <view class="card">
     <view class="card-top">成为会员</view>
-    <view class="card-con card-txt">完成一笔一步e家订单（不含合作服务）即可成为会员，享受会员尊享服务。</view>
+    <view class="card-con card-txt">完成一笔订单（不含合作服务）即可成为会员，享受会员尊享服务。</view>
   </view>
   <view class="card">
     <view class="card-top">积分获取方式</view>
@@ -19,7 +19,7 @@
         <view class="way-left">
           <view class="way-name">
             消费金额10元
-            <text class="way-name-small">（仅限一步e家业务，不含合作服务）</text>
+            <text class="way-name-small">（仅限老鸟工作室业务，不含合作服务）</text>
           </view>
           <view class="way-point">+1</view>
         </view>
@@ -47,7 +47,7 @@
   <view class="card">
     <view class="card-top">积分兑换说明</view>
     <view class="card-con card-txt">
-      <view class="card-txt-item">1、兑换一步e家抵扣金：每10积分可抵扣1元</view>
+      <view class="card-txt-item">1、兑换抵扣金：每10积分可抵扣1元</view>
       <view class="card-txt-item">2、兑换合作服务优惠券（实时更新）</view>
     </view>
   </view>
