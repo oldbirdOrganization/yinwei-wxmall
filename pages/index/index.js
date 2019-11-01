@@ -60,7 +60,7 @@ Page({
   onShareAppMessage: function() {
     return {
       title: "NideShop",
-      desc: "老鸟工作室",
+      desc: "一步E家",
       path: "/pages/index/index"
     };
   },
